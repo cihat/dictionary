@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+* {
+  text-decoration: none;
+  -webkit-overflow-scrolling: touch;
+  font-family: "Mulish", sans-serif; }
+  *:focus {
+    outline: 0; }
+
+#app {
+  font-family: "Mulish", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  #app .container {
+    max-height: 95vh;
+    max-width: 95vw;
+    height: 95vh;
+    width: 95vw;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 1rem; }
+    #app .container .left {
+      padding: 0.5rem;
+      text-align: left;
+      max-height: 80vh;
+      margin-right: 20px;
+      height: 95vh;
+      margin: auto;
+      flex: 1;
+      border: 1px solid black; }
+      #app .container .left h1 {
+        margin-bottom: 1rem;
+        font: bold;
+        text-align: center; }
+      #app .container .left ul {
+        margin: auto;
+        border: 1px solid #000;
+        min-height: 500px;
+        height: 650px;
+        overflow-y: scroll; }
+        #app .container .left ul li {
+          height: 500px;
+          margin: auto 1rem; }
+          #app .container .left ul li:first-child {
+            margin-top: 1rem; }
+    #app .container .right {
+      flex: 3;
+      border: 1px solid black;
+      margin: 1rem;
+      padding: 1rem auto; }
+      #app .container .right h1 {
+        margin: auto;
+        margin-bottom: 1rem; }
+      #app .container .right .wordTranslate {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 50vh;
+        margin-top: 3rem; }
+        #app .container .right .wordTranslate .area {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1rem; }
+          #app .container .right .wordTranslate .area span {
+            font-size: 2rem; }
+          #app .container .right .wordTranslate .area i {
+            font-size: 3rem;
+            margin: auto 1rem; }
+        #app .container .right .wordTranslate button {
+          width: 100px;
+          margin: 1rem auto;
+          padding: 1rem;
+          border-radius: 20px;
+          cursor: pointer;
+          border: 1px solid #000;
+          color: #000; }
+          #app .container .right .wordTranslate button:hover {
+            background-color: #45ddff;
+            color: #fff; }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project</title>
+  <!-- reset.css -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <!-- global.css -->
+  <link rel="stylesheet" href="css/global.css" />
+  <!-- main.css -->
+  <link rel="stylesheet" href="css/main.css" />
+  <!-- tablet.css -->
+  <link rel="stylesheet" media="(max-width: 768px)" href="css/tablet.css" />
+  <!-- mobile.css -->
+  <link rel="stylesheet" media="(max-width: 500px)" href="css/mobile.css" />
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+      <div class="left">
+        <h1>Word List</h1>
+        <ul class="words_ul">
+          <!-- <li v-for="item in items" :key="item.word">{{ Word }}</li> -->
+
+        </ul>
+      </div>
+      <div class="right">
+        <h1>Word Box</h1>
+        <div class="wordTranslate">
+          <div class="area">
+            <span>Word</span>
+            <i class="fas fa-long-arrow-alt-right"></i>
+            <span>Türkçesi</span>
+          </div>
+          <button>Hatırlat</button>
+          <p>İlk 20 kelimenin hatırlamaları</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./js/script.js"></script>
+
+</html>
