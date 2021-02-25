@@ -18,66 +18,66 @@ admit = kabul etmek
 adult = yetişkin
 affect = etkilemek
 after = sonra
-again
-against
-age
-agency
-agent
-ago
-agree
-agreement
-ahead
-air
-all
-allow
-almost
-alone
-along
-already
-also
-although
-always
-American
-among
-amount
-analysis
-and
-animal
-another
-answer
-any
-anyone
-anything
-appear
-apply
-approach
-area
-argue
-arm
-around
-arrive
-art
-article
-artist
-as
-ask
-assume
-at
-attack
-attention
-attorney
-audience
-author
-authority
-available
-avoid
-away
-baby
-back
-bad
-bag
-ball
-bank
+again = tekrar
+against = karşısında/karşı
+age = yaş
+agency = ajans
+agent = ajan
+ago = önce
+agree = katılmak
+agreement = anlaşma
+ahead = önde
+air = hava
+all = tüm/bütün
+allow = izin vermek
+almost = neredeyse
+alone = yalnız
+along = boyunca
+already = zaten
+also = ayrıca/-da,-de
+although = ...olmasına rağmen
+always = her zaman/daima
+American = Amerikan
+among = arasında
+amount = miktar
+analysis = analiz
+and = ve
+animal = hayvan
+another = başka
+answer = cevap
+any = herhangi/hiç
+anyone = kimse
+anything = herhangi bir şey/bir şey
+appear = görünmek
+apply = uygulamak
+approach = yaklaşım/yaklaşım
+area = alan
+argue = tartışmak
+arm = kol
+around = etrafında
+arrive = varmak
+art = sanat
+article = makale
+artist = sanatçı
+as = gibi/olarak
+ask = sormak
+assume = üstlenmek
+at = -de
+attack = saldırı
+attention = dikkat
+attorney = avukat
+audience = seyirci
+author = yazar
+authority = otorite
+available = mevcut
+avoid = önlemek
+away = uzak
+baby = bebek
+back = geri
+bad = kötü
+bag = çanta
+ball = top
+bank = banka
 bar
 base
 be

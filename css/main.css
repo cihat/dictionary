@@ -29,26 +29,24 @@
       margin-right: 20px;
       height: 95vh;
       margin: auto;
-      flex: 1;
-      border: 1px solid black; }
+      flex: 1; }
       #app .container .left h1 {
         margin-bottom: 1rem;
         font: bold;
         text-align: center; }
       #app .container .left ul {
         margin: auto;
-        border: 1px solid #000;
         min-height: 500px;
         height: 650px;
         overflow-y: scroll; }
         #app .container .left ul li {
-          height: 500px;
+          border-bottom: 1px solid black;
+          min-height: 1.6rem;
           margin: auto 1rem; }
           #app .container .left ul li:first-child {
             margin-top: 1rem; }
     #app .container .right {
       flex: 3;
-      border: 1px solid black;
       margin: 1rem;
       padding: 1rem auto; }
       #app .container .right h1 {
@@ -71,7 +69,8 @@
             font-size: 3rem;
             margin: auto 1rem; }
         #app .container .right .wordTranslate button {
-          width: 100px;
+          width: 10rem;
+          font-size: 2rem;
           margin: 1rem auto;
           padding: 1rem;
           border-radius: 20px;
@@ -81,3 +80,10 @@
           #app .container .right .wordTranslate button:hover {
             background-color: #45ddff;
             color: #fff; }
+        #app .container .right .wordTranslate .translate_word {
+          font-size: 3rem;
+          margin: 2.5rem auto; }
+        #app .container .right .wordTranslate .hide_translate_word {
+          cursor: pointer;
+          display: inline;
+          transition: 1ms display; }

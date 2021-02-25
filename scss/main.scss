@@ -37,7 +37,6 @@
       height: 95vh;
       margin: auto;
       flex: 1;
-      border: 1px solid black;
       h1 {
         margin-bottom: 1rem;
         font: bold;
@@ -46,13 +45,15 @@
 
       ul {
         margin: auto;
-        border: 1px solid #000;
         min-height: 500px;
         height: 650px;
         overflow-y: scroll;
 
         li {
-          height: 500px;
+          // height: 500px;
+          // margin: 1.5rem auto;
+          border-bottom: 1px solid black;
+          min-height: 1.6rem;
           &:first-child {
             margin-top: 1rem;
           }
@@ -63,7 +64,6 @@
 
     .right {
       flex: 3;
-      border: 1px solid black;
       margin: 1rem;
       padding: 1rem auto;
       h1 {
@@ -91,7 +91,8 @@
           }
         }
         button {
-          width: 100px;
+          width: 10rem;
+          font-size: 2rem;
           margin: 1rem auto;
           padding: 1rem;
           border-radius: 20px;
@@ -102,6 +103,20 @@
             background-color: rgb(69, 221, 255);
             color: #fff;
           }
+        }
+
+        .translate_word {
+          font-size: 3rem;
+          margin: 2.5rem auto;
+        }
+
+        .hide_translate_word {
+          cursor: pointer;
+          display: inline;
+          transition: 1ms display;
+          // &:visited {
+          //   display: none;
+          // }
         }
       }
     }

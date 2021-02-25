@@ -1,53 +1,38 @@
-// const element_ul = document.querySelector(".words_ul");
-
-// const words = [];
-
-// fetch("../data/words.txt")
-//   .then((res) => res.text())
-//   .then((text) => {
-//     // console.log(text);
-//     words.push(text.split("\n"));
-//   });
-
-// // console.log(words);
-
-// for (let i = 0; i < words.length; i++) {
-//   let new_li = document.createElement("li");
-//   node.innerHTML = words[i];
-//   // console.log(node);
-//   element_ul.appendChild(new_li);
-// }
-
 const element_ul = document.querySelector(".words_ul");
+const reminder_button = document.querySelector(".reminder_button");
+const translate_word = document.querySelector(".translate_word");
 
-let words = "";
+const processLineByLine = () => {
+  fetch("../data/words.txt")
+    .then((response) => response.text())
+    .then((data) => {
+      createLi(data);
+    });
+};
 
-fetch("../data/words.txt")
-  .then((res) => res.text())
-  .then((text) => {
-    // console.log(text);
-    // words.push(text.split("\n"));
-    // console.log(text);
-    words = text.split("\n");
-    console.log(words);
+const createLi = (words) => {
+  randomWord(words);
+  let all_words = words.split("\n");
+  for (let i = 0; i < all_words.length; i++) {
+    let new_li = document.createElement("li");
+    new_li.innerHTML = all_words[i];
+    element_ul.appendChild(new_li);
+  }
+};
+
+processLineByLine();
+
+const randomWord = (words) => {
+  let randomNumber;
+  let array = words.split("\n");
+  // console.log(array);
+  let newArr = array.filter((word) => word.split(" = ").length === 2);
+  let border = newArr.length;
+
+  reminder_button.addEventListener("click", (e) => {
+    randomNumber = Math.floor(Math.random() * border + 1);
+    // console.log(randomNumber);
+    translate_word.textContent = array[randomNumber];
+    // translate_word.classList.add(".hide_translate_word");
   });
-for (let i = 0; i < words.length; i++) {
-  let new_li = document.createElement("li");
-  console.log(words[i]);
-  new_li.innerHTML = words[i];
-  console.log(words[i]);
-  element_ul.appendChild(new_li);
-}
-
-console.log(typeof words);
-
-let arr = [];
-
-words.split("\n").forEach((word) => {
-  arr.push(word);
-});
-console.log(arr);
-
-arr.forEach((word) => {
-  console.log(word);
-});
+};
