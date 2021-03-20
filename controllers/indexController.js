@@ -1,50 +1,9 @@
 const axios = require("axios").default;
 require("dotenv").config();
 
-const getWord = async (inputWord) => {
-  let word = "Incorrect Word",
-    definitions;
-  const options = {
-    url: `https://owlbot.info/api/v4/dictionary/${inputWord}`,
-    method: "GET",
-    headers: {
-      "content-type": "application/json",
-      Authorization: `Token ${process.env.OWLBOT_DICTIONARY_API_KEY}`,
-    },
-  };
-
-  await axios
-    .request(options)
-    .then((res) => {
-      // console.log(res.data);
-      word = res.data.word;
-      definitions = res.data.definitions;
-      console.log(res.status);
-      if (res.status != 200) {
-        definitions = ["hatalı", "hatalı"];
-        console.log("buradaaaaa");
-        // res.redirect("/");
-        // definitions = ["it is not a word"];
-        // return [word, "Not Found"];
-      }
-      console.log("ok");
-    })
-    .catch((error) => {
-      console.log("error");
-      definitions = ["There is no such word."];
-      console.log("buradaaaaa");
-      // res.redirect("/");
-      return [word, "Incorrect Word"];
-      // return [word, "Not Found"];
-    });
-  // console.log([word, ...definitions]);
-  console.log([word, ...definitions]);
-  return [word, ...definitions];
-};
-
 exports.indexController = async (req, res, next) => {
   let wordData = [],
-    inputWord = "There is no such word.";
+    inputWord;
   inputWord = req.query.inputWord;
 
   [...wordData] = await getWord(inputWord);
@@ -57,7 +16,36 @@ exports.indexController = async (req, res, next) => {
   });
 };
 
+const getWord = async (inputWord) => {
+  let word = "Incorrect Word",
+    definitions;
+
+  const options = {
+    url: `https://owlbot.info/api/v4/dictionary/${inputWord}`,
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      Authorization: `Token ${process.env.OWLBOT_DICTIONARY_API_KEY}`,
+    },
+  };
+  await axios
+    .request(options)
+    .then((res) => {
+      word = res.data.word;
+      definitions = res.data.definitions;
+      console.log(res.status);
+      if (res.status != 200) {
+        definitions = ["", ""];
+      }
+      console.log("ok");
+    })
+    .catch((error) => {
+      console.log(error);
+      definitions = ["There is no such word."];
+      return [word, "Incorrect Word"];
+    });
+  console.log([word, ...definitions]);
+  return [word, ...definitions];
+};
+
 // ! curl --header "Authorization: Token " https://owlbot.info/api/v4/dictionary/book -s | json_pp
-//*  curl --header "Authorization: Token " https://owlbot.info/api/v4/dictionary/book -s | json_pp
-// curl --header "Authorization: Token " https://owlbot.info/api/v4/dictionary/book -s | json_pp
-//
