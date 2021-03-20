@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= title
+    block link
+      link(rel='stylesheet', href='/stylesheets/reset.css')
+      link(rel='stylesheet', href='/stylesheets/global.css')
+  body 
+    block content
+      navbar
+        ul
+          li Home 
+          li About
+          li Contact
+      block content

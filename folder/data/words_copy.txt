@@ -21,7 +21,7 @@ after = sonra
 again = tekrar
 against = karşısında/karşı
 age = yaş
-agency = ajans
+agency = 
 agent = ajan
 ago = önce
 agree = katılmak
@@ -78,68 +78,68 @@ bad = kötü
 bag = çanta
 ball = top
 bank = banka
-bar
-base
-be
-beat
-beautiful
-because
-become
-bed
-before
-begin
-behavior
-behind
-believe
-benefit
-best
-better
-between
-beyond
-big
-bill
-billion
-bit
-black
-blood
-blue
-board
-body
-book
-born
-both
-box
-boy
-break
-bring
-brother
-budget
-build
-building
-business
-but
-buy
-by
-call
-camera
-campaign
-can
-cancer
-candidate
-capital
-car
-card
-care
-career
-carry
-case
-catch
-cause
-cell
-center
-central
-century
-certain
+bar = bar
+base = temel
+be = olmak
+beat = dövmek, yenmek
+beautiful = güzel
+because = çünkü
+become = olmak
+bed = yatak
+before = önce
+begin = başlamak
+behavior = davranış
+behind = arkada
+believe = inanmak
+benefit = fayda
+best = en iyisi
+better = daha iyi
+between = arasında
+beyond = ötesinde
+big = büyük
+bill = fatura
+billion milyar
+bit = bit
+black = siyah
+blood = kan
+blue = mavi
+board = tahta
+body = vücut
+book = kitap
+born = doğmus
+both = her ikisi de
+box = kutu
+boy = erkek
+break = mola
+bring = getirmek
+brother = kardeş
+budget = bütçe
+build = inşa etmek
+building = bina
+business = iş
+but = ama
+buy = satın almak
+by = -tarafından
+call = çağrı
+camera = kamera
+campaign = kampanya
+can = yapabilmek
+cancer = kanser
+candidate = aday
+capital = başkent
+car = araba
+card = kart
+care = bakım
+career = kariyer
+carry = taşımak
+case = durum
+catch = yakalamak
+cause = sebep olmak
+cell = hücre
+center = merkez
+central = merkezi
+century = yüzyıl
+certain = belirli
 certainly
 chair
 challenge

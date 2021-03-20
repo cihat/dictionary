@@ -1,9 +1,11 @@
+const path = require("path");
+// import { join } from "path";
 const element_ul = document.querySelector(".words_ul");
 const reminder_button = document.querySelector(".reminder_button");
 const translate_word = document.querySelector(".translate_word");
 
 const processLineByLine = () => {
-  fetch("../data/words.txt")
+  fetch(path.join(__dirname, "../", "data", "words.txt"))
     .then((response) => response.text())
     .then((data) => {
       createLi(data);

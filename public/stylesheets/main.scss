@@ -1,0 +1,125 @@
+// Font Google
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+// Font Awesome
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+
+* {
+  font-family: "Mulish", sans-serif;
+  &:focus {
+    outline: 0;
+  }
+  #app {
+    font-family: "Mulish", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    .container {
+      max-height: 95vh;
+      max-width: 95vw;
+      height: 95vh;
+      width: 95vw;
+      margin: auto;
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      // align-items: center;
+      align-items: flex-start;
+      margin-top: 1rem;
+
+      .right {
+        flex: 3;
+        margin: 1rem;
+        padding: 1rem auto;
+        h1 {
+          margin: auto;
+          margin-bottom: 1rem;
+        }
+
+        .wordTranslate {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          height: 50vh;
+          margin-top: 3rem;
+          form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            input {
+              border: 1px solid #000;
+              width: 16rem;
+              height: 3rem;
+              padding: 1rem;
+              border-radius: 1rem;
+            }
+            button {
+              width: 8rem;
+              font-size: 1.5rem;
+              margin: 1rem auto;
+              padding: 1rem;
+              border-radius: 1rem;
+              cursor: pointer;
+              border: 1px solid #000;
+              color: #000;
+              margin-bottom: 2rem;
+              &:hover {
+                background-color: rgb(69, 221, 255);
+                color: #fff;
+              }
+            }
+            .result {
+              // width: 100px;
+              h1.inputValue {
+                text-transform: uppercase;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                border: 1px solid #000;
+                border-radius: 1rem;
+              }
+              ol.carts {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-content: flex-start;
+                li.cart {
+                  align-items: flex-start;
+                  display: flex;
+                  margin: 1rem;
+                  flex-direction: column;
+                  max-width: 40rem;
+                  border: 1px solid #000;
+                  border-radius: 1rem;
+                  padding: 1.5rem;
+                  & {
+                    text-align: left;
+                    margin-bottom: 0.5rem;
+                  }
+                  h2 {
+                    margin: 0 0 1rem 0;
+                  }
+                  p {
+                    margin-bottom: 0.5rem;
+                  }
+                }
+              }
+            }
+          }
+
+          .translate_word {
+            font-size: 3rem;
+            margin: 2.5rem auto;
+          }
+
+          .hide_translate_word {
+            cursor: pointer;
+            display: inline;
+            transition: 1ms display;
+            // &:visited {
+            //   display: none;
+            // }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "global.css",
+	"sources": [
+		"global.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

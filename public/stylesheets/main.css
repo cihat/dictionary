@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+* {
+  font-family: "Mulish", sans-serif; }
+  *:focus {
+    outline: 0; }
+  * #app {
+    font-family: "Mulish", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+    * #app .container {
+      max-height: 95vh;
+      max-width: 95vw;
+      height: 95vh;
+      width: 95vw;
+      margin: auto;
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      margin-top: 1rem; }
+      * #app .container .right {
+        flex: 3;
+        margin: 1rem;
+        padding: 1rem auto; }
+        * #app .container .right h1 {
+          margin: auto;
+          margin-bottom: 1rem; }
+        * #app .container .right .wordTranslate {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          height: 50vh;
+          margin-top: 3rem; }
+          * #app .container .right .wordTranslate form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center; }
+            * #app .container .right .wordTranslate form input {
+              border: 1px solid #000;
+              width: 16rem;
+              height: 3rem;
+              padding: 1rem;
+              border-radius: 1rem; }
+            * #app .container .right .wordTranslate form button {
+              width: 8rem;
+              font-size: 1.5rem;
+              margin: 1rem auto;
+              padding: 1rem;
+              border-radius: 1rem;
+              cursor: pointer;
+              border: 1px solid #000;
+              color: #000;
+              margin-bottom: 2rem; }
+              * #app .container .right .wordTranslate form button:hover {
+                background-color: #45ddff;
+                color: #fff; }
+            * #app .container .right .wordTranslate form .result h1.inputValue {
+              text-transform: uppercase;
+              font-size: 2rem;
+              margin-bottom: 1rem;
+              border: 1px solid #000;
+              border-radius: 1rem; }
+            * #app .container .right .wordTranslate form .result ol.carts {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-content: flex-start; }
+              * #app .container .right .wordTranslate form .result ol.carts li.cart {
+                align-items: flex-start;
+                display: flex;
+                margin: 1rem;
+                flex-direction: column;
+                max-width: 40rem;
+                border: 1px solid #000;
+                border-radius: 1rem;
+                padding: 1.5rem; }
+                * #app .container .right .wordTranslate form .result ol.carts li.cart {
+                  text-align: left;
+                  margin-bottom: 0.5rem; }
+                * #app .container .right .wordTranslate form .result ol.carts li.cart h2 {
+                  margin: 0 0 1rem 0; }
+                * #app .container .right .wordTranslate form .result ol.carts li.cart p {
+                  margin-bottom: 0.5rem; }
+          * #app .container .right .wordTranslate .translate_word {
+            font-size: 3rem;
+            margin: 2.5rem auto; }
+          * #app .container .right .wordTranslate .hide_translate_word {
+            cursor: pointer;
+            display: inline;
+            transition: 1ms display; }
+
+/*# sourceMappingURL=main.css.map */

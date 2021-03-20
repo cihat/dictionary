@@ -1,0 +1,44 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title= title
+  link(rel='stylesheet', href='/stylesheets/reset.css')
+  link(rel='stylesheet', href='/stylesheets/global.css')
+  link(rel='stylesheet', media="(max-width: 768px)", href='/stylesheets/tablet.css')
+  link(rel='stylesheet', media="(max-width: 500px)", href='/stylesheets/mobile.css')
+  link(rel='stylesheet', href='/stylesheets/main.css')
+body
+  #app
+    .container
+      //- .left
+      //-   h1 Word List
+      //-   ul.words_ul
+      //-     // <li v-for="item in items" :key="item.word">{{ Word }}</li>
+      .right
+        h1 Word Box
+        .wordTranslate
+          form(action="/", method="GET")  
+            input(type="text", name="inputWord", id="inputWord" )
+            button.reminder_button(type="submit") Hatırlat
+            div.result
+              h1(class="inputValue" palceholder="book")= inputValue
+              ol.carts
+                each val in wordData
+                  li.cart
+                    if val.type != null
+                      h2 Type
+                      p= val.type
+                    if val.definition != null
+                      h2 Defination
+                      p= val.definition
+                    if val.example != null
+                      h2 Example
+                      p= val.example
+                    if val.image_url != null
+                      h2 Image
+                      img(src=val.image_url)
+                    if val.emoji != null
+                      h2 Emoji
+                      p= val.emoji
