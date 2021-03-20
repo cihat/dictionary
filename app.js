@@ -14,21 +14,21 @@ const app = express();
 
 require("dotenv").config();
 
-const connectionString =
-  `mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.ch6le.mongodb.net/${process.env.words}?retryWrites=true&w=majority` ||
-  "mongodb://mongodb:27017/word";
+// const connectionString =
+//   `mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.ch6le.mongodb.net/${process.env.words}?retryWrites=true&w=majority` ||
+//   "mongodb://mongodb:27017/word";
 
-mongoose
-  .connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then((result) => {
-    // console.log(result);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+// mongoose
+//   .connect(connectionString, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then((result) => {
+//     // console.log(result);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
