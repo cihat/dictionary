@@ -12,16 +12,12 @@ head
 body
   #app
     .container
-      //- .left
-      //-   h1 Word List
-      //-   ul.words_ul
-      //-     // <li v-for="item in items" :key="item.word">{{ Word }}</li>
       .right
-        h1 Word Box
+        h1.title Dictionary
         .wordTranslate
           form(action="/", method="GET")  
             input(type="text", name="inputWord", id="inputWord" )
-            button.reminder_button(type="submit") Hatırlat
+            button.reminder_button(type="submit") Search
             div.result
               h1(class="inputValue", placeholder="book")= inputValue
               ol.carts
