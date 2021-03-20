@@ -57,5 +57,7 @@ exports.indexController = async (req, res, next) => {
   });
 };
 
-// ! curl --header "Authorization: Token a6ac9e149d04e37fc221c6689739cdd29901aa4e" https://owlbot.info/api/v4/dictionary/book -s | json_pp
-//*  curl --header "Authorization: Token a6ac9e149d04e37fc221c6689739cdd29901aa4e" https://owlbot.info/api/v4/dictionary/book -s | json_pp
+// ! curl --header "Authorization: Token " https://owlbot.info/api/v4/dictionary/book -s | json_pp
+//*  curl --header "Authorization: Token " https://owlbot.info/api/v4/dictionary/book -s | json_pp
+// curl --header "Authorization: Token " https://owlbot.info/api/v4/dictionary/book -s | json_pp
+//
