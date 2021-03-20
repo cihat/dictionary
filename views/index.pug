@@ -23,22 +23,29 @@ body
             input(type="text", name="inputWord", id="inputWord" )
             button.reminder_button(type="submit") Hatırlat
             div.result
-              h1(class="inputValue" palceholder="book")= inputValue
+              h1(class="inputValue", placeholder="book")= inputValue
               ol.carts
                 each val in wordData
-                  li.cart
-                    if val.type != null
-                      h2 Type
-                      p= val.type
-                    if val.definition != null
-                      h2 Defination
-                      p= val.definition
-                    if val.example != null
-                      h2 Example
-                      p= val.example
-                    if val.image_url != null
-                      h2 Image
-                      img(src=val.image_url)
-                    if val.emoji != null
-                      h2 Emoji
-                      p= val.emoji
+                  if typeof(val) != String
+                    li.cart
+                      if val.type != null
+                        h2 Type
+                        p 
+                          | !{val.type}
+                      if val.definition != null
+                        h2 Defination
+                        p 
+                          | !{val.definition}
+                      if val.example != null
+                        h2 Example
+                        p 
+                          | !{val.example}
+                      if val.image_url != null
+                        h2 Image
+                        img(src=val.image_url)
+                      if val.emoji != null
+                        h2 Emoji
+                        p 
+                          | !{val.emoji}
+                  else
+                    h2 val

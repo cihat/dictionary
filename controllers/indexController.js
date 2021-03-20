@@ -2,7 +2,7 @@ const axios = require("axios").default;
 require("dotenv").config();
 
 const getWord = async (inputWord) => {
-  let word = "book",
+  let word = "Incorrect Word",
     definitions;
   const options = {
     url: `https://owlbot.info/api/v4/dictionary/${inputWord}`,
@@ -19,34 +19,41 @@ const getWord = async (inputWord) => {
       // console.log(res.data);
       word = res.data.word;
       definitions = res.data.definitions;
+      console.log(res.status);
+      if (res.status != 200) {
+        definitions = ["hatalı", "hatalı"];
+        console.log("buradaaaaa");
+        // res.redirect("/");
+        // definitions = ["it is not a word"];
+        // return [word, "Not Found"];
+      }
+      console.log("ok");
     })
     .catch((error) => {
-      console.log(error);
+      console.log("error");
+      definitions = ["There is no such word."];
+      console.log("buradaaaaa");
+      // res.redirect("/");
+      return [word, "Incorrect Word"];
+      // return [word, "Not Found"];
     });
   // console.log([word, ...definitions]);
+  console.log([word, ...definitions]);
   return [word, ...definitions];
 };
 
 exports.indexController = async (req, res, next) => {
-  let word,
-    definitions,
-    type,
-    definition,
-    example,
-    image_url,
-    wordData = [];
-  let inputWord;
-  inputWord = req.query.inputWord || "book";
+  let wordData = [],
+    inputWord = "There is no such word.";
+  inputWord = req.query.inputWord;
 
   [...wordData] = await getWord(inputWord);
-  // console.log(wordData);
   inputValue = wordData.shift();
   console.log(wordData);
-
   res.render("index", {
-    title: "Word",
+    title: "Dictionary",
     inputValue: inputValue,
-    wordData: wordData,
+    wordData: wordData || "Boyle bir şey yok",
   });
 };
 
