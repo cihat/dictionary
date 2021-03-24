@@ -6,13 +6,11 @@ exports.indexController = async (req, res, next) => {
     inputWord;
   inputWord = req.query.inputWord;
 
-  [...wordData] = await getWord(inputWord);
-  inputValue = wordData.shift();
-  // console.log(wordData);
+  [inputValue, ...wordData] = await getWord(inputWord);
   res.render("index", {
     title: "Dictionary",
     inputValue: inputValue,
-    wordData: wordData || "Boyle bir şey yok",
+    wordData: wordData || "Not found",
   });
 };
 
@@ -33,14 +31,12 @@ const getWord = async (inputWord) => {
     .then((res) => {
       word = res.data.word;
       definitions = res.data.definitions;
-      // console.log(res.status);
       if (res.status != 200) {
         definitions = ["", ""];
       }
-      // console.log("ok");
     })
     .catch((error) => {
-      // console.log(error);
+      console.log(error);
       definitions = ["There is no such word."];
       return [word, "Incorrect Word"];
     });
