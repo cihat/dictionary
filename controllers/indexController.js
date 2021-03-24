@@ -40,8 +40,5 @@ const getWord = async (inputWord) => {
       definitions = ["There is no such word."];
       return [word, "Incorrect Word"];
     });
-  // console.log([word, ...definitions]);
   return [word, ...definitions];
 };
-
-// ! curl --header "Authorization: Token " https://owlbot.info/api/v4/dictionary/book -s | json_pp
