@@ -8,7 +8,7 @@ exports.indexController = async (req, res, next) => {
 
   [...wordData] = await getWord(inputWord);
   inputValue = wordData.shift();
-  console.log(wordData);
+  // console.log(wordData);
   res.render("index", {
     title: "Dictionary",
     inputValue: inputValue,
@@ -33,18 +33,18 @@ const getWord = async (inputWord) => {
     .then((res) => {
       word = res.data.word;
       definitions = res.data.definitions;
-      console.log(res.status);
+      // console.log(res.status);
       if (res.status != 200) {
         definitions = ["", ""];
       }
-      console.log("ok");
+      // console.log("ok");
     })
     .catch((error) => {
-      console.log(error);
+      // console.log(error);
       definitions = ["There is no such word."];
       return [word, "Incorrect Word"];
     });
-  console.log([word, ...definitions]);
+  // console.log([word, ...definitions]);
   return [word, ...definitions];
 };
 
