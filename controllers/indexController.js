@@ -5,7 +5,6 @@ exports.indexController = async (req, res, next) => {
   let wordData = [],
     inputWord;
   inputWord = req.query.inputWord;
-
   [inputValue, ...wordData] = await getWord(inputWord);
   res.render("index", {
     title: "Dictionary",
@@ -17,7 +16,9 @@ exports.indexController = async (req, res, next) => {
 const getWord = async (inputWord) => {
   let word = "Incorrect Word",
     definitions;
-
+  if (!inputWord) {
+    return [word, "Incorrect Word"];
+  }
   const options = {
     url: `https://owlbot.info/api/v4/dictionary/${inputWord}`,
     method: "GET",
