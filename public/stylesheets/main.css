@@ -20,9 +20,9 @@
       align-items: flex-start;
       margin-top: 1rem; }
       * #app .container .right {
-        flex: 3;
         margin: 1rem;
-        padding: 1rem auto; }
+        padding: 1rem auto;
+        flex: 1; }
         * #app .container .right h1.title {
           margin: auto;
           margin-bottom: 1rem;
@@ -59,6 +59,7 @@
                 background-color: #42b883;
                 color: #fff; }
             * #app .container .right .wordTranslate form .result h1.inputValue {
+              color: #42b883;
               text-transform: uppercase;
               font-size: 2rem;
               margin-bottom: 1rem;
@@ -83,6 +84,9 @@
                   margin: 0 0 1rem 0; }
                 * #app .container .right .wordTranslate form .result ol.carts li.cart p {
                   margin-bottom: 0.5rem; }
+                * #app .container .right .wordTranslate form .result ol.carts li.cart img {
+                  width: 224px;
+                  height: auto; }
           * #app .container .right .wordTranslate .translate_word {
             font-size: 3rem;
             margin: 2.5rem auto; }
@@ -90,5 +94,72 @@
             cursor: pointer;
             display: inline;
             transition: 1ms display; }
+      * #app .container .left {
+        flex: 1.5; }
+        * #app .container .left .left-container {
+          display: flex; }
+          * #app .container .left .left-container .left-side {
+            padding: 0.5rem;
+            text-align: left;
+            margin-right: 20px;
+            margin: auto;
+            flex: 1; }
+            * #app .container .left .left-container .left-side h1 {
+              margin-bottom: 1rem;
+              color: #42b883;
+              font: bold;
+              text-align: center; }
+            * #app .container .left .left-container .left-side ol.words_ol {
+              margin: auto;
+              min-height: 500px;
+              height: 650px;
+              overflow-y: scroll;
+              margin-left: 1rem; }
+              * #app .container .left .left-container .left-side ol.words_ol li {
+                border-bottom: 1px solid black;
+                min-height: 1.6rem;
+                margin: auto auto auto 2.5rem; }
+                * #app .container .left .left-container .left-side ol.words_ol li:first-child {
+                  margin-top: 1rem; }
+          * #app .container .left .left-container .right-side {
+            flex: 1; }
+            * #app .container .left .left-container .right-side h1 {
+              color: #42b883;
+              margin: 0.5rem 0; }
+            * #app .container .left .left-container .right-side .wordTranslate {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              height: 50vh;
+              margin-top: 3rem; }
+              * #app .container .left .left-container .right-side .wordTranslate .area {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 1rem; }
+                * #app .container .left .left-container .right-side .wordTranslate .area span {
+                  font-size: 2rem; }
+                * #app .container .left .left-container .right-side .wordTranslate .area i {
+                  font-size: 3rem;
+                  margin: auto 1rem; }
+              * #app .container .left .left-container .right-side .wordTranslate button {
+                width: 8rem;
+                font-size: 1.5rem;
+                margin: 1rem auto;
+                padding: 1rem;
+                border-radius: 1rem;
+                cursor: pointer;
+                color: #000;
+                margin-bottom: 2rem; }
+                * #app .container .left .left-container .right-side .wordTranslate button:hover {
+                  background-color: #42b883;
+                  color: #fff; }
+              * #app .container .left .left-container .right-side .wordTranslate .translate_word {
+                font-size: 1.5rem;
+                margin: 2.5rem auto; }
+              * #app .container .left .left-container .right-side .wordTranslate .hide_translate_word {
+                cursor: pointer;
+                display: inline;
+                transition: 1ms display; }
 
 /*# sourceMappingURL=main.css.map */

@@ -17,7 +17,7 @@ body
         .wordTranslate
           form(action="/", method="GET")  
             input(type="text", name="inputWord", id="inputWord" )
-            button.reminder_button(type="submit") Search
+            button.reminder(type="submit") Search
             div.result
               h1(class="inputValue", placeholder="book")= inputValue
               ol.carts
@@ -45,3 +45,23 @@ body
                           | !{val.emoji}
                   else
                     h2 val
+      .left 
+        .left-container
+          .left-side
+            h1 Word List
+            ol.words_ol 
+              
+
+          .right-side
+            h1 Word Box
+            .wordTranslate
+              .area
+                span Word
+                i.fas.fa-long-arrow-alt-right
+                span Kelime
+              button.reminder_button Remind
+              .hide_translate_word
+                h3.translate_word
+                  | word = kelime
+  script(src="javascripts/index.js") 
+

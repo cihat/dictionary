@@ -26,9 +26,9 @@
       margin-top: 1rem;
 
       .right {
-        flex: 3;
         margin: 1rem;
         padding: 1rem auto;
+        flex: 1;
         h1.title {
           margin: auto;
           margin-bottom: 1rem;
@@ -62,7 +62,7 @@
               padding: 1rem;
               border-radius: 1rem;
               cursor: pointer;
-              
+
               color: #000;
               margin-bottom: 2rem;
               &:hover {
@@ -73,10 +73,11 @@
             .result {
               // width: 100px;
               h1.inputValue {
+                color: #42b883;
                 text-transform: uppercase;
                 font-size: 2rem;
                 margin-bottom: 1rem;
-                
+
                 border-radius: 1rem;
               }
               ol.carts {
@@ -102,6 +103,10 @@
                   p {
                     margin-bottom: 0.5rem;
                   }
+                  img {
+                    width: 224px;
+                    height: auto;
+                  }
                 }
               }
             }
@@ -119,6 +124,99 @@
             // &:visited {
             //   display: none;
             // }
+          }
+        }
+      }
+      .left {
+        flex: 1.5;
+        .left-container {
+          display: flex;
+          .left-side {
+            padding: 0.5rem;
+            text-align: left;
+            margin-right: 20px;
+            margin: auto;
+            flex: 1;
+            h1 {
+              margin-bottom: 1rem;
+              color: #42b883;
+              font: bold;
+              text-align: center;
+            }
+            ol.words_ol {
+              margin: auto;
+              min-height: 500px;
+              height: 650px;
+              overflow-y: scroll;
+              margin-left: 1rem;
+
+              li {
+                // height: 500px;
+                // margin: 1.5rem auto;
+                border-bottom: 1px solid black;
+                min-height: 1.6rem;
+                &:first-child {
+                  margin-top: 1rem;
+                }
+                margin: auto auto auto 2.5rem;
+              }
+            }
+          }
+          .right-side {
+            flex: 1;
+            h1 {
+              color: #42b883;
+              margin: 0.5rem 0;
+            }
+            .wordTranslate {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              height: 50vh;
+              margin-top: 3rem;
+              .area {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 1rem;
+                span {
+                  font-size: 2rem;
+                }
+                i {
+                  font-size: 3rem;
+                  margin: auto 1rem;
+                }
+              }
+              button {
+                width: 8rem;
+                font-size: 1.5rem;
+                margin: 1rem auto;
+                padding: 1rem;
+                border-radius: 1rem;
+                cursor: pointer;
+
+                color: #000;
+                margin-bottom: 2rem;
+                &:hover {
+                  background-color: #42b883;
+                  color: #fff;
+                }
+              }
+
+              .translate_word {
+                font-size: 1.5rem;
+                margin: 2.5rem auto;
+              }
+
+              .hide_translate_word {
+                cursor: pointer;
+                display: inline;
+                transition: 1ms display;
+                // &:visited {
+                //   display: none;
+                // }
+              }
+            }
           }
         }
       }
