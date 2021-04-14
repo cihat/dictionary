@@ -1,18 +1,49 @@
+<script>
+// @ is an alias to /src
+import HelloWorld from "@/components/HelloWorld.vue";
+import getCommonWords from "@/components/getCommonWords";
+import Search from "@/components/Search";
+
+export default {
+  name: "Home",
+  components: {
+    HelloWorld,
+    getCommonWords,
+    Search,
+  },
+};
+</script>
+
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <div class="container">
+      <Search />
+      <getCommonWords class="get-common-words" />
+    </div>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<style scoped lang="scss">
+#app {
+  .container {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+    .get-common-words {
+      flex: 2;
+    }
   }
 }
-</script>
+
+@media only screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+</style>
