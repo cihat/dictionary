@@ -1,10 +1,11 @@
 {
-  "name": "dictionary-2",
+  "name": "dictionary",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "axios": "^0.21.1",
