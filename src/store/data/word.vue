@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+export default {
+  
+}
+</script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Common 1000 Word Table</title>
-</head>
-
-<body>
-  <table width="%100">
+<template>
+  <div id="words-table">
+    <table width="%100">
     <tbody>
       <tr>
         <th width="%25">İngilizce</th>
@@ -5025,6 +5022,9 @@
       </tr>
     </tbody>
   </table>
-</body>
+  </div>
+</template>
 
-</html>
+<style lang="scss">
+  
+</style>
