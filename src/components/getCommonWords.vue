@@ -43,6 +43,10 @@ export default {
         }
       });
       this.randomWordTurkish = this.words[1][getTurkishIndex];
+
+      this.$emit("randomWord", {
+        word: this.randomWordEnglish,
+      });
     },
   },
 };
@@ -62,12 +66,7 @@ export default {
           </ol>
         </div>
         <div class="right-side">
-          <h1>Word Box</h1>
           <div class="wordTranslate">
-            <div class="area">
-              <span>Word</span><i class="fas fa-long-arrow-alt-right"></i
-              ><span>Kelime</span>
-            </div>
             <button class="reminder_button" @click="getRandomWord">
               Remind
             </button>
@@ -107,6 +106,9 @@ export default {
               </h3>
             </div>
           </div>
+          <div class="youglish">
+            <h1>helloo</h1>
+          </div>
         </div>
       </div>
     </div>
@@ -121,11 +123,10 @@ export default {
     .left-container {
       display: flex;
       .left-side {
-        padding: 0.5rem;
+        padding: 0.3rem;
         text-align: left;
-        margin-right: 20px;
         margin: auto;
-        flex: 1;
+        flex: 0.75;
         h1 {
           margin-bottom: 1rem;
           color: #42b883;
@@ -140,7 +141,10 @@ export default {
 
           li {
             border-bottom: 1px solid black;
-            min-height: 1.6rem;
+            span {
+              font-weight: 700;
+              font-size: 1rem;
+            }
             &:first-child {
               margin-top: 1rem;
             }
@@ -163,8 +167,8 @@ export default {
           display: flex;
           flex-direction: column;
           text-align: center;
-          height: 50vh;
-          margin-top: 3rem;
+          border: 1px solid #42b883;
+          min-width: 30vw;
           .area {
             display: flex;
             justify-content: center;
@@ -172,22 +176,25 @@ export default {
             margin-bottom: 1rem;
             span {
               font-size: 2rem;
+              text-transform: lowercase;
             }
             i {
               font-size: 3rem;
               margin: auto 1rem;
             }
           }
-          button {
+          button.reminder_button {
             width: 8rem;
-            font-size: 1.5rem;
-            margin: 1rem auto;
-            padding: 1rem;
+            font-size: 1rem;
+            margin: 0.5rem auto;
+            padding: 0.5rem;
             border-radius: 1rem;
             cursor: pointer;
-
             color: #000;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            transition: 1s color, 1s background-color;
+
             &:hover {
               background-color: #42b883;
               color: #fff;
@@ -211,13 +218,17 @@ export default {
 
           .translate_word {
             font-size: 1.5rem;
-            margin: 2.5rem auto;
+            margin: 0.5rem auto;
+            display: flex;
+            justify-content: space-around;
+            height: 2rem;
+            align-items: center;
           }
 
           .hide_translate_word {
             cursor: pointer;
             display: inline;
-            transition: 1ms display;
+            transition: 1s display;
             // &:visited {
             //   display: none;
             // }
@@ -232,6 +243,9 @@ export default {
   .left-container {
     display: flex;
     flex-direction: column;
+  }
+  .wordTranslate {
+    margin: 2rem auto;
   }
 }
 </style>

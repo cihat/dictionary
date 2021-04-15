@@ -6,10 +6,20 @@ import Search from "@/components/Search";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      searchWord: null,
+    };
+  },
   components: {
     HelloWorld,
     getCommonWords,
     Search,
+  },
+  methods: {
+    searchRandomWord(word) {
+      this.searchWord = word.word;
+    },
   },
 };
 </script>
@@ -17,8 +27,8 @@ export default {
 <template>
   <div id="app">
     <div class="container">
-      <Search />
-      <getCommonWords class="get-common-words" />
+      <Search :randomData="searchWord" />
+      <getCommonWords class="get-common-words" @randomWord="searchRandomWord" />
     </div>
   </div>
 </template>

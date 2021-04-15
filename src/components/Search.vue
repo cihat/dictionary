@@ -10,16 +10,27 @@ export default {
       },
     };
   },
+  props: {
+    randomData: String,
+  },
+  watch: {
+    randomData() {
+      this.inputWord.input = this.randomData;
+      // search(this.inputWord.input);
+      this.search(this.inputWord.input);
+    },
+  },
   created() {
-    console.log(process.env.VUE_APP_API_KEY);
+    this.inputWord.input = this.randomData;
   },
   methods: {
-    async search() {
+    async search(input) {
       if (!this.inputWord.input) {
         return;
       }
+      input = this.inputWord.input;
       const options = {
-        url: `https://owlbot.info/api/v4/dictionary/${this.inputWord.input}`,
+        url: `https://owlbot.info/api/v4/dictionary/${input}`,
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -37,6 +48,7 @@ export default {
         })
         .catch((error) => {
           console.log(error);
+          this.inputWord.input = "";
           alert("Not Found");
         });
     },
@@ -141,14 +153,13 @@ export default {
         }
         h1 {
           text-transform: uppercase;
+          margin: 0px;
         }
         .result {
           h1.inputValue {
             color: #42b883;
             text-transform: uppercase;
             font-size: 2rem;
-            margin-bottom: 1rem;
-
             border-radius: 1rem;
           }
           ol.carts {
@@ -156,14 +167,15 @@ export default {
             flex-direction: column;
             justify-content: flex-start;
             align-content: flex-start;
+            padding: 0px;
+            list-style-type: decimal;
+            margin: 0px;
             li.cart {
               align-items: flex-start;
               display: flex;
               margin: 1rem;
               flex-direction: column;
-              // max-width: 40rem;
               border-bottom: 1px solid #000;
-              padding: 1.5rem;
               & {
                 text-align: left;
               }
