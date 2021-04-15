@@ -107,7 +107,6 @@ export default {
             </div>
           </div>
           <div class="youglish">
-            <h1>helloo</h1>
           </div>
         </div>
       </div>
