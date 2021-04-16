@@ -73,7 +73,7 @@ export default {
         <div class="right-side">
           <div class="wordTranslate">
             <button class="reminder_button" @click="getRandomWord">
-              Remind
+              Reminder
             </button>
             <div class="inputRange">
               <span>Please enter a initial value</span>
