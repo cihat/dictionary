@@ -32,7 +32,7 @@ export default {
     onYouglishAPIReady(word) {
       // var widget;
       this.widget = new YG.Widget("widget-1", {
-        width: 400,
+        width: 500,
         components: 9, //search box & caption
         events: {
           onFetchDone: this.onFetchDone,
