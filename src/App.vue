@@ -1,6 +1,5 @@
 <script>
-export default {
-}
+export default {};
 </script>
 
 <template>
@@ -16,6 +15,10 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
 // Font Awesome
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+
+html {
+  margin: auto;
+}
 
 #app {
   font-family: "Mulish", sans-serif;

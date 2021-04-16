@@ -137,6 +137,7 @@ export default {
           min-height: 500px;
           height: 85vh;
           overflow-y: scroll;
+          max-width: 300px;
 
           li {
             letter-spacing: 0.75px;
@@ -207,6 +208,7 @@ export default {
             align-items: center;
             justify-content: center;
             input {
+              min-width: 250px;
               height: 0.75rem;
               border-radius: 1.5rem;
               max-width: 10rem;
