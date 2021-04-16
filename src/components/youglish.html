@@ -18,7 +18,7 @@
     var widget;
     function onYouglishAPIReady() {
       widget = new YG.Widget("widget-1", {
-        width: 640,
+        width: 500,
         components: 9, //search box & caption 
         events: {
           'onFetchDone': onFetchDone,
@@ -27,7 +27,7 @@
         }
       });
       // 4. process the query
-      widget.fetch("courage", "english", "us");
+      widget.fetch("believe", "english", "us");
     }
 
 

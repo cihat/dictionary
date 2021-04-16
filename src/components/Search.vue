@@ -68,9 +68,8 @@ export default {
             name="inputWord"
             id="inputWord"
             v-model="inputWord.input"
-          /><button class="reminder" type="button" @click="search">
-            Search
-          </button>
+            placeholder="word..."
+          />
           <h1 v-if="inputWord.input">{{ inputWord.input }}</h1>
           <div class="result">
             <h1 class="inputValue"></h1>
@@ -104,14 +103,13 @@ export default {
   justify-content: center;
   align-items: center;
   flex: 1;
-  border: 1px solid #42b883;
+  margin-right: 1rem;
 
   .right {
     flex: 1;
-    margin-right: 1rem;
     overflow-y: scroll;
-
     height: 95vh;
+
     h1.title {
       margin: auto;
       margin-bottom: 0.1rem;
@@ -123,7 +121,7 @@ export default {
       display: flex;
       flex-direction: column;
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 1rem;
       .form {
         display: flex;
         justify-content: center;

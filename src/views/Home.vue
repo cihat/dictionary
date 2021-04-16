@@ -1,6 +1,5 @@
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 import getCommonWords from "@/components/getCommonWords";
 import Search from "@/components/Search";
 
@@ -12,7 +11,6 @@ export default {
     };
   },
   components: {
-    HelloWorld,
     getCommonWords,
     Search,
   },

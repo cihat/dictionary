@@ -1,6 +1,12 @@
 <script>
 import getWords from "../store/data/words.json";
+import Youglish from "@/components/Youglish";
+
 export default {
+  components: {
+    Youglish,
+  },
+
   data() {
     return {
       words: [[], []],
@@ -57,7 +63,6 @@ export default {
     <div class="left">
       <div class="left-container">
         <div class="left-side">
-          <h1>Word List</h1>
           <ol class="words_ol">
             <li v-for="(word, index) in 1000" :key="index">
               <span>{{ words[0][index] }}</span> :
@@ -106,8 +111,7 @@ export default {
               </h3>
             </div>
           </div>
-          <div class="youglish">
-          </div>
+          <Youglish :word="randomWordEnglish" />
         </div>
       </div>
     </div>
@@ -121,24 +125,21 @@ export default {
   .left {
     .left-container {
       display: flex;
+      margin-top: 1rem;
       .left-side {
         padding: 0.3rem;
         text-align: left;
-        margin: auto;
-        flex: 0.75;
-        h1 {
-          margin-bottom: 1rem;
-          color: #42b883;
-          font: bold;
-          text-align: center;
-        }
+        margin: 0;
+        flex: 0.5;
+
         ol.words_ol {
           margin: auto;
           min-height: 500px;
-          height: 80vh;
+          height: 85vh;
           overflow-y: scroll;
 
           li {
+            letter-spacing: 0.75px;
             border-bottom: 1px solid black;
             span {
               font-weight: 700;
@@ -167,6 +168,7 @@ export default {
           flex-direction: column;
           text-align: center;
           border: 1px solid #42b883;
+          border-radius: 50px;
           min-width: 30vw;
           .area {
             display: flex;
@@ -244,7 +246,8 @@ export default {
     flex-direction: column;
   }
   .wordTranslate {
-    margin: 2rem auto;
+    margin: 4rem auto;
+    padding: 2rem;
   }
 }
 </style>
