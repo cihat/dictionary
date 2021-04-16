@@ -208,7 +208,7 @@ export default {
             align-items: center;
             justify-content: center;
             input {
-              min-width: 250px;
+              min-width: 300px;
               height: 0.75rem;
               border-radius: 1.5rem;
               max-width: 10rem;
