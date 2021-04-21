@@ -121,6 +121,7 @@ export default {
 <style scoped lang="scss">
 #commonWords {
   border: 1px solid #42b883;
+  border-radius: 5px;
   height: 95vh;
   .left {
     .left-container {
@@ -136,7 +137,7 @@ export default {
           margin: auto;
           min-height: 500px;
           height: 85vh;
-          overflow-y: scroll;
+          overflow-y: auto;
           max-width: 300px;
 
           li {
@@ -171,6 +172,7 @@ export default {
           border: 1px solid #42b883;
           border-radius: 50px;
           min-width: 30vw;
+          margin-bottom: 0.5rem;
           .area {
             display: flex;
             justify-content: center;

@@ -107,7 +107,7 @@ export default {
 
   .right {
     flex: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 95vh;
 
     h1.title {
@@ -168,12 +168,15 @@ export default {
             padding: 0px;
             list-style-type: decimal;
             margin: 0px;
+            border-radius: 5px;
             li.cart {
+              padding: 1rem;
+              background-color: antiquewhite;
+              border-right: 5px solid #42b883;
               align-items: flex-start;
               display: flex;
               margin: 1rem;
               flex-direction: column;
-              border-bottom: 1px solid #000;
               & {
                 text-align: left;
               }
