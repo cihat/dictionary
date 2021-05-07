@@ -72,11 +72,9 @@ export default {
         </div>
         <div class="right-side">
           <div class="wordTranslate">
-            <button class="reminder_button" @click="getRandomWord">
-              Reminder
-            </button>
             <div class="inputRange">
               <span>Please enter a initial value</span>
+              <output id="amount" name="amount" for="rangeInput">0</output>
               <input
                 type="range"
                 v-model="intervalStarting"
@@ -87,8 +85,10 @@ export default {
                 id="rangeInput"
                 name="rangeInput"
               />
-              <output id="amount" name="amount" for="rangeInput">0</output>
               <span>Please enter a end value</span>
+              <output id="amount2" name="amount2" for="rangeInput2"
+                >1000</output
+              >
               <input
                 type="range"
                 v-model="intervalFinish"
@@ -99,15 +99,17 @@ export default {
                 id="rangeInput2"
                 name="rangeInput2"
               />
-              <output id="amount2" name="amount2" for="rangeInput2"
-                >1000</output
-              >
+              <button class="reminder_button" @click="getRandomWord">
+                Reminder
+              </button>
             </div>
             <div class="hide_translate_word">
               <h3 class="translate_word">
-                {{ randomWordEnglish }}
+                <span v-if="randomWordEnglish"> {{ randomWordEnglish }} </span>
+                <span v-else>?</span>
                 <i class="fas fa-long-arrow-alt-right"></i>
-                {{ randomWordTurkish }}
+                <span v-if="randomWordTurkish"> {{ randomWordTurkish }} </span>
+                <span v-else>?</span>
               </h3>
             </div>
           </div>
@@ -131,7 +133,7 @@ export default {
         padding: 0.3rem;
         text-align: left;
         margin: 0;
-        flex: 0.5;
+        flex: 0.6;
 
         ol.words_ol {
           margin: auto;
@@ -141,10 +143,11 @@ export default {
           max-width: 300px;
 
           li {
+            line-height: 2rem;
             letter-spacing: 0.75px;
-            border-bottom: 1px solid black;
+            border-bottom: 0.5px solid rgb(32, 216, 136);
             span {
-              font-weight: 700;
+              font-weight: 600;
               font-size: 1rem;
             }
             &:first-child {
@@ -159,7 +162,6 @@ export default {
         flex-direction: column;
         align-items: center;
         flex: 1;
-        height: inherit;
 
         h1 {
           color: #42b883;
@@ -171,7 +173,7 @@ export default {
           text-align: center;
           border: 1px solid #42b883;
           border-radius: 50px;
-          min-width: 30vw;
+          // min-width: 30vw;
           margin-bottom: 0.5rem;
           .area {
             display: flex;
@@ -190,13 +192,12 @@ export default {
           button.reminder_button {
             width: 8rem;
             font-size: 1rem;
-            margin: 0.5rem auto;
+            margin: 0.4rem auto;
             padding: 0.5rem;
-            border-radius: 1rem;
+            border-radius: 0.5rem;
             cursor: pointer;
             color: #000;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-weight: 600;
             transition: 1s color, 1s background-color;
 
             &:hover {
@@ -209,6 +210,7 @@ export default {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: .75rem;
             input {
               min-width: 300px;
               height: 0.75rem;
@@ -228,6 +230,12 @@ export default {
             justify-content: space-around;
             height: 2rem;
             align-items: center;
+            i {
+              flex: 0.25;
+            }
+            span {
+              flex: 1;
+            }
           }
 
           .hide_translate_word {
