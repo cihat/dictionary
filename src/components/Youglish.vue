@@ -15,14 +15,12 @@ export default {
 
   watch: {
     word() {
-      console.log(this.word);
       this.onYouglishAPIReady(this.word);
     },
   },
 
   created() {
     let tag = document.createElement("script");
-
     tag.src = "https://youglish.com/public/emb/widget.js";
     let firstScriptTag = document.getElementsByTagName("script")[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -58,7 +56,7 @@ export default {
 
     // 7. The API will call this method when a caption is consumed.
     onCaptionConsumed(event) {
-      if (++this.views < 3) this.widget.replay();
+      if (++this.views < 1) this.widget.replay();
       else if (this.curTrack < this.totalTracks) this.widget.next();
     },
   },
@@ -67,10 +65,30 @@ export default {
 
 <template>
   <div id="widget-1" @click="onYouglishAPIReady"></div>
+  <div class="text" v-if="!word">
+      <h1>Please Press the Reminder Button...</h1>
+    <div class="null-message">
+      <h1>NULL</h1>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
 #widget-1 {
   width: 500px;
+}
+
+.null-message {
+  h1 {
+    font-size: 5rem;
+    text-align: center;
+    margin: 4rem auto;
+  }
+}
+
+@media only screen and (max-width: 968px) {
+  #widget-1 {
+  width: 400px;
+}
 }
 </style>
