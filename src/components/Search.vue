@@ -70,6 +70,12 @@ export default {
             v-model="inputWord.input"
             placeholder="word..."
           />
+          <div class="text" v-if="!inputWord.input">
+            <h2>Please Press the Reminder Button or write a word...</h2>
+            <div class="null-message">
+              <h1>Null</h1>
+            </div>
+          </div>
           <h1 v-if="inputWord.input">{{ inputWord.input }}</h1>
           <div class="result">
             <h1 class="inputValue"></h1>
@@ -208,6 +214,14 @@ export default {
         // &:visited {
         //   display: none;
         // }
+      }
+
+      .null-message {
+        h1 {
+          font-size: 5rem;
+          text-align: center;
+          margin: 4rem auto;
+        }
       }
     }
   }
