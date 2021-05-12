@@ -23,7 +23,7 @@ export default {
 
 <template >
   <div id="search">
-    <div class="container">
+    <div class="search-container">
       <h1 class="title">Dictionary</h1>
       <div class="form">
         <SearchInput :inputWord="inputWord" :randomData="randomData" />
@@ -39,27 +39,24 @@ export default {
   align-items: flex-start;
   flex: 1;
   min-width: 170px;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   height: 95vh;
   max-height: 95vh;
-  overflow: auto;
   margin-bottom: 1rem;
 
-  .container {
+  .search-container {
     flex: 1;
-    overflow-y: auto;
     width: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-left: .2rem;
-    padding-right: .2rem;
-    
+    justify-content: flex-start;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
 
     .title {
-      margin-top: .5rem;
-      margin-bottom: .5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
       font-size: 2.25rem;
       color: #42b883;
     }
@@ -69,7 +66,7 @@ export default {
       flex-direction: column;
       text-align: center;
       justify-content: center;
-      margin-top: .5rem;
+      margin-top: 0.5rem;
     }
 
     .translate_word {

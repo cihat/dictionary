@@ -30,6 +30,9 @@ export default {
 
 <style scoped lang="scss">
 ol.carts {
+  height: 65vh;
+  max-height: 65vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -39,12 +42,12 @@ ol.carts {
   margin: 0px;
   border-radius: 5px;
   li.cart {
-    padding: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
     background-color: antiquewhite;
     border-right: 5px solid #42b883;
     align-items: flex-start;
     display: flex;
-    margin: 1rem;
     flex-direction: column;
     & {
       text-align: left;

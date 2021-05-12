@@ -35,46 +35,12 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  input {
-    border: 1px solid #000;
-    width: 16rem;
-    height: 1rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    font-size: 1rem;
-    outline-style: none;
-  }
-  button {
-    width: 6rem;
-    font-size: 1rem;
-    padding: 0.75rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    margin: 0.4rem;
-    color: #000;
-    &:hover {
-      background-color: #42b883;
-      color: #fff;
-    }
-  }
-  h1 {
+.result {
+  h1.inputValue {
+    color: #42b883;
     text-transform: uppercase;
-    margin: 0px;
-    margin-top: 0.5rem;
-    font-size: 1rem;
-  }
-  .result {
-    h1.inputValue {
-      color: #42b883;
-      text-transform: uppercase;
-      font-size: 1.5rem;
-      border-radius: 1rem;
-    }
+    font-size: 1.5rem;
+    border-radius: 1rem;
   }
 }
 </style>
