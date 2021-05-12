@@ -12,6 +12,10 @@ export default {};
 // Font Awesome
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
 
+body {
+  font-size: 14px;
+}
+
 html {
   margin: auto;
 }
