@@ -1,7 +1,7 @@
 <script>
 // @ is an alias to /src
-import getCommonWords from "@/components/getCommonWords";
-import Search from "@/components/Search";
+import CommonWords from "@/components/CommonWords/CommonWords";
+import Search from "@/components/Search/Search";
 
 export default {
   name: "Home",
@@ -11,7 +11,7 @@ export default {
     };
   },
   components: {
-    getCommonWords,
+    CommonWords,
     Search,
   },
   methods: {
@@ -26,7 +26,7 @@ export default {
   <div id="app">
     <div class="container">
       <Search :randomData="searchWord" />
-      <getCommonWords class="get-common-words" @randomWord="searchRandomWord" />
+      <CommonWords class="get-common-words" @randomWord="searchRandomWord" />
     </div>
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
     .get-common-words {
       flex: 2;
