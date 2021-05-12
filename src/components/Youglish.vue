@@ -80,7 +80,7 @@ export default {
 
 .null-message {
   h1 {
-    font-size: 5rem;
+    font-size: 2.5rem;
     text-align: center;
     margin: 4rem auto;
   }
