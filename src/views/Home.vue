@@ -35,10 +35,9 @@ export default {
 #app {
   .container {
     margin: auto;
-    text-align: center;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 
     .get-common-words {
       flex: 2;
@@ -46,12 +45,5 @@ export default {
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
+
 </style>

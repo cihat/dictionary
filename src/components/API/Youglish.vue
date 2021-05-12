@@ -1,4 +1,5 @@
 <script>
+import NullMessage from "@/components/NullMessage";
 export default {
   data() {
     return {
@@ -7,6 +8,9 @@ export default {
       totalTracks: 0,
       widget: null,
     };
+  },
+  components: {
+    NullMessage,
   },
   props: {
     word: String,
@@ -26,8 +30,8 @@ export default {
     onYouglishAPIReady(word) {
       // var widget;
       this.widget = new YG.Widget("widget-1", {
-        width: 500,
-        height: 300,
+        width: 450,
+        height: 400,
         components: 9, //search box & caption
         events: {
           onFetchDone: this.onFetchDone,
@@ -60,16 +64,14 @@ export default {
 <template>
   <div id="widget-1" @click="onYouglishAPIReady"></div>
   <div class="text" v-if="!word">
-      <h1>Please Press the Reminder Button...</h1>
-    <div class="null-message">
-      <h1>NULL</h1>
-    </div>
+    <NullMessage />
   </div>
 </template>
 
 <style lang="scss">
 #widget-1 {
-  width: 500px;
+  max-width: 500px;
+  max-height: 400;
 }
 .null-message {
   h1 {
@@ -78,9 +80,5 @@ export default {
     margin: 4rem auto;
   }
 }
-@media only screen and (max-width: 968px) {
-  #widget-1 {
-  width: 400px;
-}
-}
+
 </style>
