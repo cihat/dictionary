@@ -39,6 +39,20 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## [Project URL](https://cihat.github.io/dictionary/)
 
+### To-Do
+
+- [ ] Vuex kullan
+- [ ] infinite-scroll kullan
+- [ ] Responsive(mobil, tablet)
+- [ ] Update Style
+- [ ] Theme
+- [ ] Loading 
+- [ ] Update Code
+- [ ] Update Components
+- [ ] (Feature-1 Local Storage)
+- [ ] (Feature-2 User Favori Kelime Listesi with Local Storage)
+- [ ] (Feature-3 User specific range aralığı)
+
 MIT License
 
 Copyright (c) 2021 Cihat Salik
