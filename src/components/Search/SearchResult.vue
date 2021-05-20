@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <h1 v-if="inputWord.input">{{ inputWord.input }}</h1>
+  <h2 v-if="inputWord.input">{{ inputWord.input }}</h2>
   <div class="result">
     <NullMessage :inputWord="inputWord" />
     <SearchResultCarts :inputWord="inputWord" />
@@ -35,12 +35,12 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.result {
-  h1.inputValue {
-    color: #42b883;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    border-radius: 1rem;
-  }
+h2 {
+  color: #42b883;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  margin-top: 8px;
+  margin-bottom: 4px;
 }
 </style>

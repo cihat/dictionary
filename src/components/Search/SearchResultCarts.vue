@@ -30,8 +30,8 @@ export default {
 
 <style scoped lang="scss">
 ol.carts {
-  height: 65vh;
-  max-height: 65vh;
+  height: 70vh;
+  max-height: 70vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
