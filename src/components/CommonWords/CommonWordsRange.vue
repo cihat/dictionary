@@ -1,59 +1,60 @@
 <script>
-import getWords from "@/data/words.json";
+import getWords from '@/data/words.json'
 import CommonWordsHide from '@/components/CommonWords/CommonWordsHide'
 
 export default {
-  name: "CommonWordsRange",
-    data() {
+  name: 'CommonWordsRange',
+  data() {
     return {
       words: [[], []],
-      randomWordEnglish: "",
-      randomWordTurkish: "",
+      randomWordEnglish: '',
+      randomWordTurkish: '',
       intervalStarting: 0,
-      intervalFinish: 1000,
-    };
+      intervalFinish: 1000
+    }
   },
   components: {
-    CommonWordsHide,
+    CommonWordsHide
   },
   methods: {
     getRandomWord() {
-      let getTurkishIndex;
-      console.log(this.randomWordEnglish);
+      let getTurkishIndex
+      console.log(this.randomWordEnglish)
       if (
         (this.intervalStarting <= 0 && this.intervalStarting >= 1000) ||
         (this.intervalFinish <= 0 && this.intervalFinish >= 1000)
       ) {
-        this.intervalStarting = 0;
-        this.intervalFinish = 1000;
-        alert("Please enter values between 0 and 1000");
+        this.intervalStarting = 0
+        this.intervalFinish = 1000
+        alert('Please enter values between 0 and 1000')
       }
-      this.randomWordEnglish = this.words[0][
-        Math.floor(
-          Math.random() *
-            (this.intervalFinish - Number(this.intervalStarting)) +
-            Number(this.intervalStarting)
-        )
-      ];
+      this.randomWordEnglish =
+        this.words[0][
+          Math.floor(
+            Math.random() *
+              (this.intervalFinish - Number(this.intervalStarting)) +
+              Number(this.intervalStarting)
+          )
+        ]
       this.words[0].filter((word, index) => {
         if (word === this.randomWordEnglish) {
-          getTurkishIndex = index;
+          getTurkishIndex = index
         }
-      });
-      this.randomWordTurkish = this.words[1][getTurkishIndex];
+      })
+      this.randomWordTurkish = this.words[1][getTurkishIndex]
 
-      this.$emit("randomWord", {
-        word: this.randomWordEnglish,
-      });
-    },
+      this.$emit('randomWord', {
+        word: this.randomWordEnglish
+      })
+    }
   },
   created() {
     for (let word in getWords) {
-      this.words[0].push(word);
-      this.words[1].push(getWords[word]);
+      this.words[0].push(word)
+      this.words[1].push(getWords[word])
     }
-  },
-};
+  }
+}
 </script>
 
 <template>
@@ -85,7 +86,10 @@ export default {
       />
       <button class="reminder_button" @click="getRandomWord">Reminder</button>
     </div>
-    <CommonWordsHide :randomWordEnglish="randomWordEnglish" :randomWordTurkish="randomWordTurkish"/>
+    <CommonWordsHide
+      :randomWordEnglish="randomWordEnglish"
+      :randomWordTurkish="randomWordTurkish"
+    />
   </div>
 </template>
 
@@ -94,7 +98,7 @@ export default {
   display: flex;
   flex-direction: column;
   text-align: center;
-   border-radius: 50px;
+  border-radius: 50px;
   // min-width: 30vw;
   margin-bottom: 0.5rem;
   .area {

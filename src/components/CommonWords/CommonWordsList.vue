@@ -1,13 +1,13 @@
 <script>
 export default {
-  name: "CommonWordsList",
+  name: 'CommonWordsList',
   props: {
     words: {
       type: Array,
-      default: [0]["data could not be loaded."],
-    },
-  },
-};
+      default: [0]['data could not be loaded.']
+    }
+  }
+}
 </script>
 
 <template>

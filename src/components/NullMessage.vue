@@ -1,13 +1,13 @@
 <script>
 export default {
-  name: "NullMessage",
+  name: 'NullMessage',
   props: {
     inputWord: {
       type: String,
-      default: ""
-    },
-  },
-};
+      default: ''
+    }
+  }
+}
 </script>
 
 <template>
@@ -23,15 +23,15 @@ export default {
 <style scoped lang="scss">
 .message-text {
   font-size: 1.25rem;
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .null-message {
   h1 {
     font-size: 2rem;
     text-align: center;
-    margin-top: .5rem;
-    margin-bottom: .5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 }
 </style>

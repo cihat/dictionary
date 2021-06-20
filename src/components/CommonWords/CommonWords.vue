@@ -1,41 +1,41 @@
 <script>
-import getWords from "@/data/words.json";
-import Youglish from "@/components/Youglish";
-import CommonWordsList from "@/components/CommonWords/CommonWordsList";
-import CommonWordsRange from "@/components/CommonWords/CommonWordsRange";
+import getWords from '@/data/words.json'
+import Youglish from '@/components/Youglish'
+import CommonWordsList from '@/components/CommonWords/CommonWordsList'
+import CommonWordsRange from '@/components/CommonWords/CommonWordsRange'
 
 export default {
-  name: "CommonWords",
+  name: 'CommonWords',
   components: {
     Youglish,
     CommonWordsList,
-    CommonWordsRange,
+    CommonWordsRange
   },
 
   data() {
     return {
       words: [[], []],
-      randomWordEnglish: "",
-    };
+      randomWordEnglish: ''
+    }
   },
   props: {
-    randomEnglishWord: String,
+    randomEnglishWord: String
   },
   created() {
     for (let word in getWords) {
-      this.words[0].push(word);
-      this.words[1].push(getWords[word]);
+      this.words[0].push(word)
+      this.words[1].push(getWords[word])
     }
   },
   methods: {
     randomWord(random) {
-      this.randomWordEnglish = random.word;
-      this.$emit("randomWord", {
-        word: this.randomWordEnglish,
-      });
-    },
-  },
-};
+      this.randomWordEnglish = random.word
+      this.$emit('randomWord', {
+        word: this.randomWordEnglish
+      })
+    }
+  }
+}
 </script>
 
 <template>

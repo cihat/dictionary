@@ -3,14 +3,14 @@ export default {
   props: {
     randomWordEnglish: {
       type: String,
-      default: "",
+      default: ''
     },
     randomWordTurkish: {
       type: String,
-      default: "",
-    },
-  },
-};
+      default: ''
+    }
+  }
+}
 </script>
 
 <template>
@@ -34,10 +34,10 @@ export default {
 }
 
 .word {
-    font-size: 1.5rem;
-    margin: 0.25rem auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+  font-size: 1.5rem;
+  margin: 0.25rem auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 </style>
