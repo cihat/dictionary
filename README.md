@@ -53,7 +53,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 <br/>
 
 ## License
-<hr/>
 MIT License
 
 Copyright (c) 2021 Cihat Salik
