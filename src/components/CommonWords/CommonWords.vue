@@ -1,6 +1,6 @@
 <script>
 import getWords from "@/data/words.json";
-import Youglish from "@/components/API/Youglish";
+import Youglish from "@/components/Youglish";
 import CommonWordsList from "@/components/CommonWords/CommonWordsList";
 import CommonWordsRange from "@/components/CommonWords/CommonWordsRange";
 
