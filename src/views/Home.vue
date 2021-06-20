@@ -1,7 +1,7 @@
 <script>
 // @ is an alias to /src
-import CommonWords from "@/components/CommonWords/CommonWords";
-import Search from "@/components/Search/Search";
+import CommonWords from "@/components/CommonWords";
+import Search from "@/components/Search";
 
 export default {
   name: "Home",
