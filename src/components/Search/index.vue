@@ -26,7 +26,7 @@ export default {
     <div class="search-container">
       <h1 class="title">Dictionary</h1>
       <div class="form">
-        <SearchInput :inputWord="inputWord" :randomData="randomData" />
+        <SearchInput :inputWord="inputWord" :randomData="randomData" class="" />
         <SearchResult :inputWord="inputWord" />
       </div>
     </div>

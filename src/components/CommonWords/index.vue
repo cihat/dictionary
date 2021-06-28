@@ -40,9 +40,9 @@ export default {
 
 <template>
   <div id="commonWords">
-    <div class="words-container">
-      <CommonWordsList :words="words" />
-      <div class="range-api">
+    <div class="words-container container grid grid-center">
+      <CommonWordsList :words="words"  class="col col-5 col-md-4 col-lg-3"/>
+      <div class="range-api col col-7 col-md-8 col-lg-9">
         <CommonWordsRange @randomWord="randomWord" />
         <Youglish class="youglish" :word="randomWordEnglish" />
       </div>

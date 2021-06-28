@@ -1,32 +1,32 @@
 <script>
 // @ is an alias to /src
-import CommonWords from "@/components/CommonWords";
-import Search from "@/components/Search";
+import CommonWords from '@/components/CommonWords'
+import Search from '@/components/Search'
 
 export default {
-  name: "Home",
+  name: 'Home',
   data() {
     return {
-      searchWord: null,
-    };
+      searchWord: null
+    }
   },
   components: {
     CommonWords,
-    Search,
+    Search
   },
   methods: {
     searchRandomWord(word) {
-      this.searchWord = word.word;
-    },
-  },
-};
+      this.searchWord = word.word
+    }
+  }
+}
 </script>
 
 <template>
-  <div id="app">
-    <div class="container">
-      <Search :randomData="searchWord" />
-      <CommonWords class="get-common-words" @randomWord="searchRandomWord" />
+  <div id="app container">
+    <div class="container grid">
+      <Search :randomData="searchWord" class="col col-12" />
+      <CommonWords class="get-common-words col col-12" @randomWord="searchRandomWord" />
     </div>
   </div>
 </template>
@@ -44,6 +44,4 @@ export default {
     }
   }
 }
-
-
 </style>
