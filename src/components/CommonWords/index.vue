@@ -3,6 +3,7 @@ import getWords from '@/data/words.json'
 import Youglish from '@/components/Youglish'
 import CommonWordsList from '@/components/CommonWords/CommonWordsList'
 import CommonWordsRange from '@/components/CommonWords/CommonWordsRange'
+import '../../styles/index.scss'
 
 export default {
   name: 'CommonWords',
@@ -40,11 +41,15 @@ export default {
 
 <template>
   <div id="commonWords">
-    <div class="words-container container grid grid-center">
-      <CommonWordsList :words="words"  class="col col-5 col-md-4 col-lg-3"/>
-      <div class="range-api col col-7 col-md-8 col-lg-9">
-        <CommonWordsRange @randomWord="randomWord" />
-        <Youglish class="youglish" :word="randomWordEnglish" />
+    <div class="container">
+      <div class="words-container grid">
+        <div class="wrapper col col-12 col-sm-6 col-md-5">
+          <CommonWordsList :words="words" />
+        </div>
+        <div class="range-api col col-12 col-sm-6 col-md-7">
+          <CommonWordsRange @randomWord="randomWord" />
+          <Youglish class="youglish" :word="randomWordEnglish" />
+        </div>
       </div>
     </div>
   </div>
@@ -52,22 +57,24 @@ export default {
 
 <style scoped lang="scss">
 #commonWords {
+  padding: 0px;
   border: 1px solid #42b883;
+  background: rgba(#42b883, 0.2);
   border-radius: 5px;
   width: inherit;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
   .words-container {
     display: flex;
-    height: 95vh;
+    max-height: 95vh;
 
     .range-api {
-      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex: 1;
+      padding: 0px;
+      height: 100%;
       max-height: 100%;
-      border-left: 1px solid #42b883;
-      border-bottom: 1px solid #42b883;
       margin-bottom: 0;
     }
   }

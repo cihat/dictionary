@@ -23,25 +23,24 @@ export default {
 </script>
 
 <template>
-  <div id="app container">
-    <div class="container grid">
-      <Search :randomData="searchWord" class="col col-12" />
-      <CommonWords class="get-common-words col col-12" @randomWord="searchRandomWord" />
+  <div id="app">
+    <div class="wrapper">
+      <div class="grid grid-center">
+        <Search :randomData="searchWord" class="col col-12 col-md-4" />
+        <CommonWords
+          class="get-common-words col col-12 col-md-8"
+          @randomWord="searchRandomWord"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 #app {
-  .container {
+  .wrapper {
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .get-common-words {
-      flex: 2;
-    }
+    margin: 16px;
   }
 }
 </style>

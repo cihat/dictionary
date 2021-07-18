@@ -11,31 +11,34 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <ol class="words-list">
-      <li v-for="(word, index) in 1000" :key="index">
-        <span>{{ words[0][index] }}</span> :
-        <span>{{ words[1][index] }}</span>
-      </li>
-    </ol>
-  </div>
+  <ol class="words-list">
+    <li v-for="(word, index) in 1000" :key="index">
+      <span>{{ words[0][index] }}</span> :
+      <span>{{ words[1][index] }}</span>
+    </li>
+  </ol>
 </template>
 
 <style scoped lang="scss">
+@import '../../styles/mixins/_mixins.scss';
 .container {
   padding: 0;
   text-align: left;
   margin: 0;
   flex: 0.6;
   height: 100%;
+  width: 100%;
+  min-width: 300px;
+  @include respond-above(md) {
+    min-width: 300px;
+  }
 
   ol.words-list {
-    height: 95vh;
+    max-height: 95vh;
     margin: auto;
     min-height: 500px;
     overflow-y: auto;
-    // width: 300px;
-    // min-width: 240px;
+    padding-left: 0px;
 
     li {
       line-height: 1.25rem;

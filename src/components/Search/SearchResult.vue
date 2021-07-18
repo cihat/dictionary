@@ -1,29 +1,29 @@
 <script>
-import NullMessage from "@/components/NullMessage";
-import SearchResultCarts from "@/components/Search/SearchResultCarts";
+import NullMessage from '@/components/NullMessage'
+import SearchResultCarts from '@/components/Search/SearchResultCarts'
 
 export default {
-  name: "SearchResult",
+  name: 'SearchResult',
   components: {
     NullMessage,
-    SearchResultCarts,
+    SearchResultCarts
   },
   data() {
     return {
-      key: "value",
-    };
+      key: 'value'
+    }
   },
   props: {
     inputWord: {
       type: String,
-      default: "",
+      default: ''
     },
     inputWord: {
       type: String,
-      default: "",
-    },
-  },
-};
+      default: ''
+    }
+  }
+}
 </script>
 
 <template>
@@ -42,5 +42,8 @@ h2 {
   border-radius: 1rem;
   margin-top: 8px;
   margin-bottom: 4px;
+}
+.result {
+  width: 100%;
 }
 </style>

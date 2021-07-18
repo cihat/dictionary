@@ -1,13 +1,13 @@
 <script>
 export default {
-  name: "SearchResultCarts",
+  name: 'SearchResultCarts',
   props: {
     inputWord: {
       type: String,
-      default: "",
-    },
-  },
-};
+      default: ''
+    }
+  }
+}
 </script>
 
 <template>
@@ -30,7 +30,6 @@ export default {
 
 <style scoped lang="scss">
 ol.carts {
-  height: 70vh;
   max-height: 70vh;
   overflow-y: auto;
   display: flex;
@@ -56,6 +55,7 @@ ol.carts {
       margin: 0px;
       margin-top: 1rem;
       font-size: 1rem;
+      min-width: 100%;
     }
     p {
       margin: 0.1rem;

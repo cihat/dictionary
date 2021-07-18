@@ -30,8 +30,8 @@ export default {
     onYouglishAPIReady(word) {
       // var widget;
       this.widget = new YG.Widget('widget-1', {
-        width: 450,
-        height: 400,
+        width: 500,
+        height: 500,
         components: 9, //search box & caption
         events: {
           onFetchDone: this.onFetchDone,
@@ -68,10 +68,18 @@ export default {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #widget-1 {
   max-width: 500px;
-  max-height: 400;
+  max-height: 500px;
+
+  #content_scroll {
+    background: rgba(#42b883, 0.2) !important;
+  }
+
+  .caption {
+    background: rgba(#42b883, 0.2) !important;
+  }
 }
 .null-message {
   h1 {

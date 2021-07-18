@@ -1,1 +1,6 @@
-@import "./grid.scss";
+@import './variables';
+@import './mixins/mixins';
+@import './grid';
+@import './normalize';
+@import './space';
+@import './display';
