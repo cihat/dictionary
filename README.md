@@ -7,11 +7,12 @@ My purpose of doing this project was when I realized that I had a hard time memo
 I will share the source code url of the project. You can see how he does it from there. I used two APIs in the project. One of them is OWLBOT DICTIONARY API and the other is Youglish API. These APIs helped me a lot in the project.
 
 ## The project is as follows;
+
 There is the most common 1000-word json in English, and the key values in this json correspond to English-Turkish words. In the project, there are two input ranges from 0 to 1000, the user selects the desired value in these ranges and comes across the user randomly in the desired range. It sends the APIs we use with this word, bringing the meaning of the word, an example sentence, the place where it is used in these APIs.
 
 #### [Project URL](https://cihat.github.io/dictionary/)
-![dictionary-2](https://user-images.githubusercontent.com/57585087/115006011-0f6af580-9eb1-11eb-85b2-58545cb65e12.gif)
 
+![dictionary-2](https://user-images.githubusercontent.com/57585087/115006011-0f6af580-9eb1-11eb-85b2-58545cb65e12.gif)
 
 ## Project setup
 
@@ -37,13 +38,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### To-Do
 
-- [ ] Vuex kullan
-- [ ] infinite-scroll kullan
-- [ ] Responsive(mobil, tablet)
-- [ ] Update Style
-- [ ] Theme
-- [ ] Loading 
-- [ ] Styling Update(grid)
+- [ ] Use Vuex
+- [ ] Use infinite-scroll
+- [x] Responsive(mobil, tablet)
+- [x] Update Style
+- [x] Styling Update(grid)
+- [x] Theme
+- [ ] Loading
 - [ ] Update Code
 - [ ] Update Components
 - [ ] (Feature-1 Local Storage)
@@ -53,6 +54,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 <br/>
 
 ## License
+
 MIT License
 
 Copyright (c) 2021 Cihat Salik
