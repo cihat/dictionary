@@ -1,0 +1,50 @@
+$colors: (
+  'alpha': #7d7e7e,
+  'beta': #f2b02f,
+  'beta_light': #fef7ea,
+  'gamma': #000000,
+  'delta': #ffffff,
+  'theta': #fbfbfb,
+  'epsilon': #bfbfbf,
+  'zeta': #ff3a5f,
+  'lambda': #55d6d2,
+  'sigma': #1f2531,
+  'error': #f25239,
+  /////
+  'primary': #ff3a5f,
+  'text': #1f2531,
+  'orange': #f2b02f,
+  'cloudyBlue': #55d6d2,
+  'descriptionGray': #7d7e7e,
+  'marketingGray': #fafafa,
+  'banner': #fffcf7,
+);
+
+// Padding and margin space value for each 1 to 12 values
+$space: 5px !default;
+
+//Base unit used for spacing gutters
+$base-unit: 15px;
+
+//Screen Sizes
+$screen-xs: 576px;
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 1200px;
+$screen-xl: 1440px;
+
+$container-max-widths: (
+  'xs': 556px,
+  'sm': 748px,
+  'md': 924px,
+  'lg': 1100px,
+  'xl': 1338px,
+);
+
+$breakpoints: (
+  'xs': $screen-xs,
+  'sm': $screen-sm,
+  'md': $screen-md,
+  'lg': $screen-lg,
+  'xl': $screen-xl,
+);

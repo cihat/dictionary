@@ -1,0 +1,53 @@
+$space: 5px !default;
+
+@for $i from 0 through 12 {
+  @each $prop, $abbrev in (margin: m, padding: p) {
+    .#{$abbrev}-#{$i} {
+      #{$prop}: $i * $space;
+    }
+    .#{$abbrev}t-#{$i},
+    .#{$abbrev}y-#{$i} {
+      #{$prop}-top: $i * $space;
+    }
+    .#{$abbrev}r-#{$i},
+    .#{$abbrev}x-#{$i} {
+      #{$prop}-right: $i * $space;
+    }
+    .#{$abbrev}b-#{$i},
+    .#{$abbrev}y-#{$i} {
+      #{$prop}-bottom: $i * $space;
+    }
+    .#{$abbrev}l-#{$i},
+    .#{$abbrev}x-#{$i} {
+      #{$prop}-left: $i * $space;
+    }
+  }
+}
+
+@each $key, $value in $breakpoints {
+  @media only screen and (min-width: $value) {
+    @for $i from 0 through 12 {
+      @each $prop, $abbrev in (margin: m, padding: p) {
+        .#{$abbrev}-#{$key}-#{$i} {
+          #{$prop}: $i * $space;
+        }
+        .#{$abbrev}t-#{$key}-#{$i},
+        .#{$abbrev}y-#{$key}-#{$i} {
+          #{$prop}-top: $i * $space;
+        }
+        .#{$abbrev}r-#{$key}-#{$i},
+        .#{$abbrev}x-#{$key}-#{$i} {
+          #{$prop}-right: $i * $space;
+        }
+        .#{$abbrev}b-#{$key}-#{$i},
+        .#{$abbrev}y-#{$key}-#{$i} {
+          #{$prop}-bottom: $i * $space;
+        }
+        .#{$abbrev}l-#{$key}-#{$i},
+        .#{$abbrev}x-#{$key}-#{$i} {
+          #{$prop}-left: $i * $space;
+        }
+      }
+    }
+  }
+}

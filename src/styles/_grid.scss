@@ -1,10 +1,8 @@
-//Base unit used for spacing gutters
-$base-unit: 8px;
 
-//Screen Sizes
-$screen-sm: 480px;
-$screen-md: 624px;
-$screen-lg: 744px;
+//Base unit used for spacing gutters
+$base-unit: 8px !default;
+
+@use "sass:math";
 
 ////////////////////////
 //The Flex Grid
@@ -144,6 +142,13 @@ $screen-lg: 744px;
   flex-direction: row-reverse;
 }
 
+.h-full {
+  height: 100%;
+}
+.w-full {
+  width: 100%;
+}
+
 ////////////////////////
 //Column Sizing Classes
 ////////////////////////
@@ -163,39 +168,79 @@ $screen-lg: 744px;
 //Percent Based Columns
 @for $i from 1 through 12 {
   .col-#{$i} {
-    -ms-flex-preferred-size: (100% / 12) * $i;
-    -webkit-flex-basis: (100% / 12) * $i;
-    flex-basis: (100% / 12) * $i;
-    max-width: (100% / 12) * $i;
+    -ms-flex-preferred-size: math.div(100%, 12) * $i;
+    -webkit-flex-basis: math.div(100%, 12) * $i;
+    flex-basis: math.div(100%, 12) * $i;
+    max-width: math.div(100%, 12) * $i;
   }
 }
 
 //////////////////
 //Media Queries
 //////////////////
-@media only screen and (max-width: $screen-sm) {
-  // .grid-sm {
-  .col-sm {
-    flex: 100%;
-    max-width: 100%;
+@each $key, $value in $breakpoints {
+  @media only screen and (min-width: $value) {
+    @for $i from 1 through 12 {
+      .col-#{$key}-#{$i} {
+        -ms-flex-preferred-size: math.div(100%, 12) * $i;
+        -webkit-flex-basis: math.div(100%, 12) * $i;
+        flex-basis: math.div(100%, 12) * $i;
+        max-width: math.div(100%, 12) * $i;
+      }
+    }
+    .col-#{$key}-first {
+      -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+      order: -1;
+    }
+    .col-#{$key}-default {
+      -ms-flex-order: 0;
+      order: 0;
+    }
+    .col-#{$key}-last {
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1;
+    }
   }
-  // }
 }
 
-@media only screen and (max-width: $screen-md) {
-  // .grid-md {
-  .col-md {
-    flex: 100%;
-    max-width: 100%;
-  }
-  // }
+.container {
+  width: 100%;
+  padding-right: $base-unit;
+  padding-left: $base-unit;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-@media only screen and (max-width: $screen-lg) {
-  // .grid-lg {
-  .col-lg {
-    flex: 100%;
-    max-width: 100%;
+.container-full {
+  width: 100%;
+  padding-left: $base-unit;
+  padding-right: $base-unit;
+}
+
+.container-fluid {
+  width: 100%;
+  max-width: 1920px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@each $key, $value in $container-max-widths {
+  $min-width: map-get($breakpoints, $key);
+  @if $min-width {
+    @media only screen and (min-width: map-get($breakpoints, $key)) {
+      .container {
+        max-width: $value;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .container-full {
+        width: calc(100% - (calc((100vw - (100vw - 100%) - #{$value}) / 2)));
+        margin-left: calc((100vw - (100vw - 100%) - #{$value}) / 2);
+        padding-right: 0;
+      }
+    }
   }
-  // }
 }

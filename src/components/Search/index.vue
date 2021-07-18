@@ -39,8 +39,7 @@ export default {
   align-items: flex-start;
   flex: 1;
   min-width: 170px;
-  margin-right: 0.5rem;
-  height: 95vh;
+  max-height: 95vh;
   max-height: 95vh;
   margin-bottom: 1rem;
 
@@ -67,6 +66,7 @@ export default {
       text-align: center;
       justify-content: center;
       margin-top: 0.5rem;
+      width: 100%;
     }
 
     .translate_word {

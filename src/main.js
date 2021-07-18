@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 // Global CSS
-import './styles/index.scss'
+// import './styles/index.scss'
 
 createApp(App)
   .use(store)

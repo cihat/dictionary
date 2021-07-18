@@ -1,58 +1,58 @@
 <script>
-import axios from "axios";
+import axios from 'axios'
 
 export default {
-  name: "SearchInput",
+  name: 'SearchInput',
   props: {
     inputWord: {
       type: Number,
-      default: "",
+      default: ''
     },
     randomData: {
       type: String,
-      default: "",
-    },
+      default: ''
+    }
   },
 
   watch: {
     randomData() {
-      this.inputWord.input = this.randomData;
+      this.inputWord.input = this.randomData
       // search(this.inputWord.input);
-      this.search(this.inputWord.input);
-    },
+      this.search(this.inputWord.input)
+    }
   },
   created() {
-    this.inputWord.input = this.randomData;
+    this.inputWord.input = this.randomData
   },
 
   methods: {
     async search(input) {
       if (!this.inputWord.input) {
-        return;
+        return
       }
-      input = this.inputWord.input;
+      input = this.inputWord.input
       const options = {
         url: `https://owlbot.info/api/v4/dictionary/${input}`,
-        method: "GET",
+        method: 'GET',
         headers: {
-          "content-type": "application/json",
-          Authorization: `Token ${process.env.VUE_APP_API_KEY}`,
-        },
-      };
+          'content-type': 'application/json',
+          Authorization: `Token ${process.env.VUE_APP_API_KEY}`
+        }
+      }
       await axios
         .request(options)
         .then((res) => {
           // console.log(res.data);
-          this.inputWord.wordData = res.data.definitions;
+          this.inputWord.wordData = res.data.definitions
         })
         .catch((error) => {
-          console.log(error);
-          this.inputWord.input = "";
-          alert("Not Found");
-        });
-    },
-  },
-};
+          console.log(error)
+          this.inputWord.input = ''
+          alert('Not Found')
+        })
+    }
+  }
+}
 </script>
 
 <template>
@@ -72,8 +72,8 @@ input {
   border: 1px solid #42b883;
   margin-left: auto;
   margin-right: auto;
-  width: 12rem;
-  height: 1rem;
+  width: 256px;
+  max-width: 300px;
   padding: 0.5rem;
   border-radius: 1rem;
   font-size: 1rem;
