@@ -5,14 +5,19 @@ export default {
     words: {
       type: Array,
       default: [0]['data could not be loaded.']
-    }
+    },
+    randomWord: ''
   }
 }
 </script>
 
 <template>
   <ol class="words-list">
-    <li v-for="(word, index) in 1000" :key="index">
+    <li
+      v-for="(word, index) in 1000"
+      :key="index"
+      :class="[{ active: index === words[0].indexOf(randomWord) }]"
+    >
       <span>{{ words[0][index] }}</span> :
       <span>{{ words[1][index] }}</span>
     </li>
@@ -38,7 +43,7 @@ export default {
     margin: auto;
     min-height: 500px;
     overflow-y: auto;
-    padding-left: 0px;
+    padding-left: 28px;
 
     li {
       line-height: 1.25rem;
@@ -54,5 +59,15 @@ export default {
       margin: auto auto auto 1rem;
     }
   }
+}
+
+.active {
+  font-weight: 700;
+  color: red;
+  transition: all 0.5s;
+}
+
+.errorClass {
+  background-color: pink;
 }
 </style>

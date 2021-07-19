@@ -44,7 +44,7 @@ export default {
     <div class="container">
       <div class="words-container grid">
         <div class="wrapper col col-12 col-sm-6 col-md-5">
-          <CommonWordsList :words="words" />
+          <CommonWordsList :words="words" :randomWord="randomWordEnglish" />
         </div>
         <div class="range-api col col-12 col-sm-6 col-md-7">
           <CommonWordsRange @randomWord="randomWord" />
@@ -63,7 +63,6 @@ export default {
   border-radius: 5px;
   width: inherit;
   margin-bottom: 1rem;
-  margin-top: 1rem;
   .words-container {
     display: flex;
     max-height: 95vh;
