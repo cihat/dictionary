@@ -50,7 +50,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [ ] (Feature-1 Local Storage)
 - [ ] (Feature-2 User Favori Kelime Listesi with Local Storage)
 - [ ] (Feature-3 User specific range aralığı)
-
+ 
 <br/>
 
 ## License
