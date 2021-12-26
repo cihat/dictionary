@@ -1,5 +1,13 @@
 # Dictionary
 
+![License](https://img.shields.io/github/license/cihat/dictionary)
+![GitHub repo size](https://img.shields.io/github/repo-size/cihat/dictionary)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/cihat/dictionary)
+![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fchtslk)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/cihat/dictionary)
+![GitHub last commit](https://img.shields.io/github/last-commit/cihat/dictionary)
+
+
 ![](https://raw.githubusercontent.com/cihat/dictionary/master/public/dictionary.png)
 
 I tried to make a project that will help you learn English with Vue.js. It gives you to understand the most common 1000 words in English randomly according to the range you entered and with the examples used on Youtube with Youglish API. I hope it will be useful content when studying English, memorizing words.
