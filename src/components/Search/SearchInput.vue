@@ -12,7 +12,6 @@ export default {
   },
   data() {
     return {
-      isLoading: false,
       inputWord: {
         type: Number,
         default: ''
@@ -39,14 +38,12 @@ export default {
       }
 
       this.setInputWord(this.inputWord.input)
-
-      this.isLoading = true
       try {
         this.fetchWord(this.inputWord.input)
       } catch (error) {
         console.log(error)
       } finally {
-        this.isLoading = false
+        this.inputWord.input = ''
       }
     }
   }
