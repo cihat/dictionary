@@ -14,11 +14,10 @@ export default {
   <div v-if="!inputWord.input">
     <h2 class="message-text">Please Press the Reminder Button...</h2>
     <div class="null-message">
-      <h1>Null</h1>
+      <h1>Not Found Word</h1>
     </div>
   </div>
 </template>
-
 
 <style scoped lang="scss">
 .message-text {
