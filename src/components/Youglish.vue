@@ -1,5 +1,6 @@
 <script>
 import NullMessage from '@/components/NullMessage'
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -12,12 +13,12 @@ export default {
   components: {
     NullMessage
   },
-  props: {
-    word: String
+  computed: {
+    ...mapState(['inputWord'])
   },
   watch: {
-    word() {
-      this.onYouglishAPIReady(this.word)
+    inputWord() {
+      this.onYouglishAPIReady(this.inputWord)
     }
   },
   created() {
@@ -27,7 +28,7 @@ export default {
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
   },
   methods: {
-    onYouglishAPIReady(word) {
+    onYouglishAPIReady(inputWord) {
       // var widget;
       this.widget = new YG.Widget('widget-1', {
         width: 500,
@@ -40,7 +41,7 @@ export default {
         }
       })
       // 4. process the query
-      this.widget.fetch(word, 'english', 'us')
+      this.widget.fetch(inputWord, 'english', 'us')
     },
     // 5. The API will call this method when the search is done
     onFetchDone(event) {
@@ -63,7 +64,7 @@ export default {
 
 <template>
   <div id="widget-1" @click="onYouglishAPIReady"></div>
-  <div class="text" v-if="!word">
+  <div class="text" v-if="!inputWord">
     <NullMessage />
   </div>
 </template>
