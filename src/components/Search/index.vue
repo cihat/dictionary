@@ -1,33 +1,30 @@
 <script>
-import SearchResult from "@/components/Search/SearchResult";
-import SearchInput from "@/components/Search/SearchInput";
+import SearchResult from '@/components/Search/SearchResult'
+import SearchInput from '@/components/Search/SearchInput'
 
 export default {
   components: {
     SearchResult,
-    SearchInput,
+    SearchInput
   },
   data() {
     return {
-      inputWord: {
-        input: "",
-        wordData: {},
-      },
-    };
+      isLoading: false
+    }
   },
   props: {
-    randomData: String,
-  },
-};
+    randomData: String
+  }
+}
 </script>
 
-<template >
+<template>
   <div id="search">
     <div class="search-container">
       <h1 class="title">Dictionary</h1>
       <div class="form">
-        <SearchInput :inputWord="inputWord" :randomData="randomData" class="" />
-        <SearchResult :inputWord="inputWord" />
+        <SearchInput :randomData="randomData" class="" />
+        <SearchResult />
       </div>
     </div>
   </div>

@@ -1,23 +1,28 @@
 <script>
 import axios from 'axios'
+import { mapActions, mapState, mapMutations } from 'vuex'
 
 export default {
   name: 'SearchInput',
   props: {
-    inputWord: {
-      type: Number,
-      default: ''
-    },
     randomData: {
       type: String,
       default: ''
+    }
+  },
+  data() {
+    return {
+      isLoading: false,
+      inputWord: {
+        type: Number,
+        default: ''
+      }
     }
   },
 
   watch: {
     randomData() {
       this.inputWord.input = this.randomData
-      // search(this.inputWord.input);
       this.search(this.inputWord.input)
     }
   },
@@ -26,30 +31,23 @@ export default {
   },
 
   methods: {
-    async search(input) {
+    ...mapActions(['fetchWord']),
+    ...mapMutations(['setInputWord']),
+    async search() {
       if (!this.inputWord.input) {
         return
       }
-      input = this.inputWord.input
-      const options = {
-        url: `https://owlbot.info/api/v4/dictionary/${input}`,
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-          Authorization: `Token ${process.env.VUE_APP_API_KEY}`
-        }
+
+      this.setInputWord(this.inputWord.input)
+
+      this.isLoading = true
+      try {
+        this.fetchWord(this.inputWord.input)
+      } catch (error) {
+        console.log(error)
+      } finally {
+        this.isLoading = false
       }
-      await axios
-        .request(options)
-        .then((res) => {
-          // console.log(res.data);
-          this.inputWord.wordData = res.data.definitions
-        })
-        .catch((error) => {
-          console.log(error)
-          this.inputWord.input = ''
-          alert('Not Found')
-        })
     }
   }
 }
@@ -65,7 +63,6 @@ export default {
     placeholder="word..."
   />
 </template>
-
 
 <style scoped lang="scss">
 input {

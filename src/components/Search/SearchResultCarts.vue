@@ -12,7 +12,7 @@ export default {
 
 <template>
   <ol class="carts">
-    <li class="cart" v-for="(item, index) in inputWord.wordData" :key="index">
+    <li class="cart" v-for="(item, index) in inputWord" :key="index">
       <h2 class="type" v-if="item.type">Type</h2>
       <p v-if="item.type">{{ item.type }}</p>
       <h2 v-if="item.definition" class="defination">Definition</h2>
@@ -26,7 +26,6 @@ export default {
     </li>
   </ol>
 </template>
-
 
 <style scoped lang="scss">
 ol.carts {

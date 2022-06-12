@@ -1,6 +1,7 @@
 <script>
 import NullMessage from '@/components/NullMessage'
 import SearchResultCarts from '@/components/Search/SearchResultCarts'
+import { mapState } from 'vuex'
 
 export default {
   name: 'SearchResult',
@@ -18,19 +19,22 @@ export default {
       type: String,
       default: ''
     },
-    inputWord: {
-      type: String,
-      default: ''
-    }
+    loading: false
+  },
+  computed: {
+    ...mapState(['wordData'])
   }
 }
 </script>
 
 <template>
-  <h2 v-if="inputWord.input">{{ inputWord.input }}</h2>
+  <h2 v-if="this.wordData.word">{{ this.wordData.word }}</h2>
   <div class="result">
-    <NullMessage :inputWord="inputWord" />
-    <SearchResultCarts :inputWord="inputWord" />
+    <NullMessage
+      :inputWord="this.wordData.word"
+      v-if="!this.wordData.definitions"
+    />
+    <SearchResultCarts v-else :inputWord="this.wordData.definitions" />
   </div>
 </template>
 

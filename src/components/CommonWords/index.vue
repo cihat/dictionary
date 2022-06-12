@@ -48,7 +48,7 @@ export default {
         </div>
         <div class="range-api col col-12 col-sm-6 col-md-7">
           <CommonWordsRange @randomWord="randomWord" />
-          <Youglish class="youglish" :word="randomWordEnglish" />
+          <Youglish class="youglish" />
         </div>
       </div>
     </div>
