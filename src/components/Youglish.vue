@@ -1,6 +1,7 @@
 <script>
 import NullMessage from '@/components/NullMessage'
 import { mapState } from 'vuex'
+
 export default {
   data() {
     return {
@@ -82,6 +83,7 @@ export default {
     background: rgba(#42b883, 0.2) !important;
   }
 }
+
 .null-message {
   h1 {
     font-size: 2.5rem;

@@ -14,7 +14,8 @@ axios.defaults.withCredentials = true
 
 const mutations = {
   SET_WORD_DATA: 'setWordData',
-  SET_INPUT_WORD: 'setInputWord'
+  SET_INPUT_WORD: 'setInputWord',
+  SET_ACTIVE_WORD: 'setActiveWord',
 }
 
 const actions = {
@@ -25,7 +26,8 @@ export default createStore({
   state: {
     inputWord: '',
     wordData: {},
-    dummyWords: loadLocalStorage('words') || dummyWords || {}
+    dummyWords: loadLocalStorage('words') || dummyWords || {},
+    activeWord: null
   },
   mutations: {
     [mutations.SET_WORD_DATA](state, payload) {
@@ -34,13 +36,22 @@ export default createStore({
     },
     [mutations.SET_INPUT_WORD](state, payload) {
       state.inputWord = payload
+    },
+    [mutations.SET_ACTIVE_WORD](state, payload) {
+      console.log('payload', payload)
+      state.activeWord = payload
     }
   },
   actions: {
     [actions.FETCH_WORD]({ commit }, wordInput) {
-      axios
-        .get(`/${wordInput}`)
-        .then(res => commit(mutations.SET_WORD_DATA, res.data))
+      // axios
+      //   .get(`/${wordInput}`)
+      //   .then(res => commit(mutations.SET_WORD_DATA, res.data))
+      fetch(`https://owlbot.info/api/v4/dictionary/${wordInput}`, {
+        headers: {
+          Authorization: `Token ${process.env.VUE_APP_API_KEY}`
+        }
+      }).then(res => commit(mutations.SET_WORD_DATA, res.data))
     }
   },
   modules: {}

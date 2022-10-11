@@ -1,5 +1,5 @@
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 import CommonWordsHide from '@/components/CommonWords/CommonWordsHide'
 
 export default {
@@ -20,6 +20,7 @@ export default {
     CommonWordsHide
   },
   methods: {
+    ...mapMutations(['setActiveWord']),
     getRandomWord() {
       let getTurkishIndex
       if (
@@ -48,6 +49,8 @@ export default {
       this.$emit('randomWord', {
         word: this.randomWordEnglish
       })
+
+      this.setActiveWord(this.randomWordEnglish)
     }
   },
   created() {

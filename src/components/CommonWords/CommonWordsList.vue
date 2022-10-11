@@ -1,5 +1,5 @@
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 
 export default {
   name: 'CommonWordsList',
@@ -12,20 +12,36 @@ export default {
     randomWord: ''
   },
   computed: {
-    ...mapState(["dummyWords"]),
+    ...mapState(["dummyWords", "activeWord"]),
   },
   created() {
     for (let word in this.dummyWords) {
       this.words[0].push(word)
       this.words[1].push(this.dummyWords[word])
     }
-  }
+  },
+  methods: {
+    ...mapActions(['fetchWord']),
+    ...mapMutations(['setInputWord', "setActiveWord"]),
+    handleActiveWord(word) {
+      this.setActiveWord(word)
+      this.setInputWord(word)
+
+      try {
+        this.fetchWord(word)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  },
 }
 </script>
 
 <template>
   <ol class="words-list">
-    <li v-for="(word, index) in 1000" :key="index" :class="[{ active: index === words[0].indexOf(randomWord) }]">
+    <li v-for="(word, index) in 1000" :key="index"
+      :class="[{ active: words[0][index] == activeWord }]"
+      @click="this.handleActiveWord(words[0][index])">
       <span>{{ words[0][index] }}</span> :
       <span>{{ words[1][index] }}</span>
     </li>
@@ -59,6 +75,7 @@ export default {
       line-height: 1.25rem;
       letter-spacing: 0.75px;
       border-bottom: 0.5px solid rgb(32, 216, 136);
+      margin: auto auto auto 1rem;
 
       span {
         font-weight: 600;
@@ -69,7 +86,9 @@ export default {
         margin-top: 1rem;
       }
 
-      margin: auto auto auto 1rem;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
