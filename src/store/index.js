@@ -1,5 +1,16 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import dummyWords from '@/data/words.json'
+import { loadLocalStorage, saveLocalStorage } from '../utils/localStorage'
+
+saveLocalStorage('words', dummyWords)
+
+axios.defaults.baseURL = 'https://owlbot.info/api/v4/dictionary'
+axios.defaults.headers.common[
+  'Authorization'
+] = `Token ${process.env.VUE_APP_API_KEY}`
+axios.defaults.headers.post['Content-Type'] = 'application/json'
+axios.defaults.withCredentials = true
 
 const mutations = {
   SET_WORD_DATA: 'setWordData',
@@ -13,7 +24,8 @@ const actions = {
 export default createStore({
   state: {
     inputWord: '',
-    wordData: {}
+    wordData: {},
+    dummyWords: loadLocalStorage('words') || dummyWords || {}
   },
   mutations: {
     [mutations.SET_WORD_DATA](state, payload) {
@@ -26,15 +38,9 @@ export default createStore({
   },
   actions: {
     [actions.FETCH_WORD]({ commit }, wordInput) {
-      const options = {
-        url: `https://owlbot.info/api/v4/dictionary/${wordInput}`,
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-          Authorization: `Token ${process.env.VUE_APP_API_KEY}`
-        }
-      }
-      axios(options).then(res => commit(mutations.SET_WORD_DATA, res.data))
+      axios
+        .get(`/${wordInput}`)
+        .then(res => commit(mutations.SET_WORD_DATA, res.data))
     }
   },
   modules: {}
