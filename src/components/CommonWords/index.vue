@@ -1,5 +1,4 @@
 <script>
-import getWords from '@/data/words.json'
 import Youglish from '@/components/Youglish'
 import CommonWordsList from '@/components/CommonWords/CommonWordsList'
 import CommonWordsRange from '@/components/CommonWords/CommonWordsRange'
@@ -22,12 +21,6 @@ export default {
   props: {
     randomEnglishWord: String
   },
-  created() {
-    for (let word in getWords) {
-      this.words[0].push(word)
-      this.words[1].push(getWords[word])
-    }
-  },
   methods: {
     randomWord(random) {
       this.randomWordEnglish = random.word
@@ -44,7 +37,7 @@ export default {
     <div class="container">
       <div class="words-container grid">
         <div class="wrapper col col-12 col-sm-6 col-md-5">
-          <CommonWordsList :words="words" :randomWord="randomWordEnglish" />
+          <CommonWordsList :randomWord="randomWordEnglish" />
         </div>
         <div class="range-api col col-12 col-sm-6 col-md-7">
           <CommonWordsRange @randomWord="randomWord" />
@@ -63,6 +56,7 @@ export default {
   border-radius: 5px;
   width: inherit;
   margin-bottom: 1rem;
+
   .words-container {
     display: flex;
     max-height: 95vh;
