@@ -7,8 +7,8 @@ export default function BackButton() {
   const router = useRouter()
 
   return (
-    <button onClick={() => router.back()}>
-      <ChevronLeft width={30} height={30} className="my-14" />
+    <button onClick={() => router.back()} className="my-8 block mb-4">
+      <ChevronLeft width={26} height={26} />
     </button>
   )
 }
