@@ -38,7 +38,7 @@ export default function Words() {
     defaultValues: {
       wordCount: randomNumberFromRange(1, 20),
       wordLength: randomNumberFromRange(2, 10),
-      firstLetter: "",
+      firstLetter: randomAlphabet(),
       alphabetize: true
     },
   })
@@ -49,12 +49,12 @@ export default function Words() {
 
 
   useEffect(() => {
-    setRandomWords(randomNumberFromRange(1, 20), randomNumberFromRange(2, 10), randomAlphabet(), true)
+    setRandomWords(randomNumberFromRange(1, 20), randomNumberFromRange(2, 10), form.getValues('firstLetter'), true);
   }, [])
 
   return (
     <Container as="main" size="full" className="flex sm:flex-row flex-col justify-between sm:justify-evenly h-[600px]">
-      <div className="flex flex-col mr-4">
+      <div className="flex flex-col max-w-[50%] mr-auto">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField
@@ -138,7 +138,7 @@ export default function Words() {
         </ul>
       </div>
 
-      <YouglishWidget className="flex-grow min-w-[400px] mt-4 sm:mt-0" word={word} />
+      <YouglishWidget className="flex-grow mt-4 sm:mt-0 max-w-[50%] ml-auto" word={word} firstLetter={form.getValues('firstLetter')} />
     </Container>
   )
 }

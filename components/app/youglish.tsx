@@ -9,9 +9,10 @@ import { randomAlphabet } from '@/lib/utils';
 type YouglishWidgetProps = {
   word: string;
   className: string;
+  firstLetter: string;
 };
 
-function YouglishWidget({ word, className }: YouglishWidgetProps) {
+function YouglishWidget({ word, className, firstLetter }: YouglishWidgetProps) {
   const isDev = process.env.NODE_ENV === 'development';
 
   // if(isDev) return <div className={className}>test</div>;
@@ -78,7 +79,7 @@ function YouglishWidget({ word, className }: YouglishWidgetProps) {
     firstScriptTag.parentNode.insertBefore(scriptTag, firstScriptTag);
 
     setTimeout(() => {
-      onYouglishAPIReady(randomAlphabet());
+      onYouglishAPIReady(firstLetter);
     }, 500);
 
   }, []);
