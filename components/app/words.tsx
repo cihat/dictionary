@@ -38,7 +38,7 @@ export default function Words() {
     defaultValues: {
       wordCount: randomNumberFromRange(1, 20),
       wordLength: randomNumberFromRange(2, 10),
-      firstLetter: randomAlphabet(),
+      firstLetter: "",
       alphabetize: true
     },
   })
@@ -54,7 +54,7 @@ export default function Words() {
 
   return (
     <Container as="main" size="full" className="flex sm:flex-row flex-col justify-between sm:justify-evenly h-[600px]">
-      <div className="flex flex-col mr-4pin">
+      <div className="flex flex-col mr-4">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField
@@ -112,9 +112,9 @@ export default function Words() {
               name="alphabetize"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Alphabetize</FormLabel>
+                  <FormLabel className="mr-2">Alphabetize</FormLabel>
                   <FormControl>
-                    <Checkbox checked={field.value} />
+                    <Checkbox checked={true} />
                   </FormControl>
                   <FormDescription>
                     Do you want the words to be alphabetized?
@@ -129,16 +129,16 @@ export default function Words() {
         <br />
 
         <h1 className="font-bold text-lg mb-2">Words</h1>
-        <ul className="grid grid-cols-2 gap-2 lg:grid-cols-4 xl:grid-cols-8">
-          {words.map((word, index) => (
+        <ul className="grid grid-cols-1 gap-2 lg:grid-cols-4 xl:grid-cols-8">
+          {words ? words?.map((word, index) => (
             <li key={index}>
               <Button onClick={() => setWord(word)}>{word}</Button>
             </li>
-          ))}
+          )) : null}
         </ul>
       </div>
 
-      <YouglishWidget className="flex-grow min-h-[800px]" word={word} />
+      <YouglishWidget className="flex-grow min-w-[400px] mt-4 sm:mt-0" word={word} />
     </Container>
   )
 }

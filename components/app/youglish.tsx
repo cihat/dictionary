@@ -4,6 +4,7 @@
 import cx from '@/lib/cx';
 import React, { useState, useEffect, useRef } from 'react';
 import Container from '../ui/container';
+import { randomAlphabet } from '@/lib/utils';
 
 type YouglishWidgetProps = {
   word: string;
@@ -23,8 +24,8 @@ function YouglishWidget({ word, className }: YouglishWidgetProps) {
 
   const onYouglishAPIReady = (inputWord: string) => {
     widget = new YG.Widget(widgetRef.current, {
-      width: 700,
-      height: 700,
+      width: 950,
+      height: 950,
       components: 9,
       autoplay: true,
       autoReplay: true,
@@ -77,7 +78,7 @@ function YouglishWidget({ word, className }: YouglishWidgetProps) {
     firstScriptTag.parentNode.insertBefore(scriptTag, firstScriptTag);
 
     setTimeout(() => {
-      onYouglishAPIReady("love");
+      onYouglishAPIReady(randomAlphabet());
     }, 500);
 
   }, []);
@@ -89,9 +90,7 @@ function YouglishWidget({ word, className }: YouglishWidgetProps) {
   }, [word]);
 
   return (
-    <Container className={cx(className, "min-h-[800px]")}>
-      <div id="youglish-widget" ref={widgetRef}></div>
-    </Container>
+    <div id="youglish-widget" ref={widgetRef}></div>
   );
 }
 

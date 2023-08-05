@@ -3,9 +3,13 @@ export default class Words {
 
   async fetchWords(wordCount: number, wordLength: number, firstLetter: string, alphabetize: boolean) {
     const url = `https://random-word-api.vercel.app/api?words=${wordCount}&length=${wordLength}&letter=${firstLetter}&alphabetizer=${alphabetize}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   public async setRandomWords(wordCount: number, wordLength: number, firstLetter: string, alphabetize: boolean) {
