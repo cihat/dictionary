@@ -55,7 +55,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Header() {
   return (
-    <NavigationMenu className="my-4">
+    <NavigationMenu className="my-4 mx-auto">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
@@ -69,7 +69,7 @@ export function Header() {
                   >
                     {/* <Icons.logo className="h-6 w-6" /> */}
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      Radix UI
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
                       Beautifully designed components built with Radix UI and
@@ -107,9 +107,9 @@ export function Header() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="/learn" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
+              Learn
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
