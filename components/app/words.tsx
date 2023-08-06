@@ -36,8 +36,8 @@ export default function Words() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema as any),
     defaultValues: {
-      wordCount: randomNumberFromRange(1, 20),
-      wordLength: randomNumberFromRange(2, 10),
+      wordCount: randomNumberFromRange(5, 10),
+      wordLength: randomNumberFromRange(5, 10),
       firstLetter: randomAlphabet(),
       alphabetize: true
     },

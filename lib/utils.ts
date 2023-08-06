@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 
 export function randomAlphabet() {
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  const alphabet = 'abcdefghijklmnopqrstuvwyz';
   const randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
   return randomLetter;
 }

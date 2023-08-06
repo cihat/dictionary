@@ -61,7 +61,7 @@ export default function FeatureSection() {
             Explore Our Exciting Features
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Unlock a world of possibilities with our cutting-edge features! From dynamic vocabulary selection to gamified learning experiences, our platform offers a wide array of tools to make your language journey enjoyable and effective. Stay ahead of the curve as we constantly add new and innovative features to enhance your language learning experience. Get ready to elevate your English vocabulary and fluency in ways you've never imagined!
+            Unlock a world of possibilities with our cutting-edge features! From dynamic vocabulary selection to gamified learning experiences, our platform offers a wide array of tools to make your language journey enjoyable and effective. Stay ahead of the curve as we constantly add new and innovative features to enhance your language learning experience. Get ready to elevate your English vocabulary and fluency in ways you&apos;ve never imagined!
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

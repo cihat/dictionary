@@ -15,7 +15,7 @@ type YouglishWidgetProps = {
 function YouglishWidget({ word, className, firstLetter }: YouglishWidgetProps) {
   const isDev = process.env.NODE_ENV === 'development';
 
-  // if(isDev) return <div className={className}>test</div>;
+  if(isDev) return <div className={className}>Developing</div>;
 
   const widgetRef = useRef(null);
   const [views, setViews] = useState(0);

@@ -7,12 +7,17 @@ const people = [
   {
     "name": "Jane Smith",
     "role": "Software Engineer 💻",
-    "imageurl": "https://randomuser.me/api/portraits/men/17.jpg"
+    "imageurl": "https://randomuser.me/api/portraits/women/84.jpg"
   },
   {
-    "name": "Michael Johnson",
-    "role": "CEO",
-    "imageurl": "https://randomuser.me/api/portraits/men/13.jpg"
+    "name": "Olivia White",
+    "role": "Designer ✨",
+    "imageurl": "https://randomuser.me/api/portraits/women/9.jpg"
+  },
+  {
+    "name": "Jennifer Miller",
+    "role": "Software Engineer 💻",
+    "imageurl": "https://randomuser.me/api/portraits/women/58.jpg"
   },
   {
     "name": "Emily Lee",
@@ -25,9 +30,9 @@ const people = [
     "imageurl": "https://randomuser.me/api/portraits/men/29.jpg"
   },
   {
-    "name": "Olivia White",
-    "role": "Designer ✨",
-    "imageurl": "https://randomuser.me/api/portraits/women/9.jpg"
+    "name": "Michael Johnson",
+    "role": "CEO",
+    "imageurl": "https://randomuser.me/api/portraits/men/13.jpg"
   }
 ]
 
@@ -38,7 +43,7 @@ export default function TeamSection() {
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet Our Team</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Get to know our exceptional team of dedicated professionals! From talented designers who bring creativity to life, skilled developers who code with precision, to our visionary CEO guiding our path to success – each member plays a vital role in making our language learning platform extraordinary. We are committed to providing the best learning experience for you, driven by our passion for languages and innovation. Together, we embark on this journey to help you master English vocabulary and excel in your language goals. Let's learn and grow together!
+            Get to know our exceptional team of dedicated professionals! From talented designers who bring creativity to life, skilled developers who code with precision, to our visionary CEO guiding our path to success – each member plays a vital role in making our language learning platform extraordinary. We are committed to providing the best learning experience for you, driven by our passion for languages and innovation. Together, we embark on this journey to help you master English vocabulary and excel in your language goals. Let&apos;s learn and grow together!
           </p>
         </div>
         <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
