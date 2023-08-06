@@ -34,7 +34,7 @@ const quotestions = [
 
 export function CardAccordion() {
   return (
-    <Accordion type="single" collapsible className="w-full max-w-screen-2xl m-auto my-12">
+    <Accordion type="single" collapsible className="w-full max-w-screen-2xl m-auto my-12 mb-52">
       {
         quotestions.map((question, index) => (
           <AccordionItem key={index} value={`item-${index + 1}`}>

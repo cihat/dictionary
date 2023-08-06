@@ -16,13 +16,13 @@ type FeatureType = {
 
 const features: FeatureType[] = [
   {
-    name: 'Learn with Videos',
-    description: 'Expand your vocabulary and improve language skills by learning with engaging videos tailored to your level. Our video lessons offer real-life conversations, interactive exercises, and subtitles for better comprehension. Start your language journey with the power of visual learning!',
-    href: '/learn/with-videos',
-    icon: Youtube,
-    buttonText: 'Start Learning',
-    image: '/images/learn-with-videos.png',
-    comingSoon: false,
+    "name": 'Learn with Videos',
+    "description": 'Expand your vocabulary and improve language skills by learning with engaging videos tailored to your level. Our video lessons offer real-life conversations, interactive exercises, and subtitles for better comprehension. Start your language journey with the power of visual learning!',
+    "href": '/learn/with-videos',
+    "icon": Youtube,
+    "buttonText": 'Start Learning',
+    "image": '/images/learn-with-videos.png',
+    "comingSoon": false,
   },
   {
     "name": "Interactive Video Lessons",
@@ -30,7 +30,7 @@ const features: FeatureType[] = [
     "href": "/learn",
     "icon": Youtube,
     "buttonText": "Start Learning",
-    comingSoon: true
+    "comingSoon": true
   },
   {
     "name": "Contextual Learning",
@@ -38,7 +38,7 @@ const features: FeatureType[] = [
     "icon": Book,
     "href": "/learn",
     "buttonText": "Start Learning",
-    comingSoon: true
+    "comingSoon": true
   },
   {
     "name": "Personalized Learning Path",
@@ -46,7 +46,7 @@ const features: FeatureType[] = [
     "href": "/learn",
     "buttonText": "Start Learning",
     "icon": Dumbbell,
-    comingSoon: true
+    "comingSoon": true
   },
   {
     "name": "Language Level Assessment",
@@ -54,7 +54,7 @@ const features: FeatureType[] = [
     "href": "/learn",
     "icon": GraduationCap,
     "buttonText": "Start Learning",
-    comingSoon: true
+    "comingSoon": true
   },
   {
     "name": "Gamified Learning Experience",
@@ -62,19 +62,18 @@ const features: FeatureType[] = [
     "href": "/learn",
     "icon": Gamepad,
     "buttonText": "Start Learning",
-    comingSoon: true
+    "comingSoon": true
   },
 ]
 
 export default function FeatureList() {
   return (
-    <Container as="main" size='large' className={"grid grid-cols-1 md:grid-cols-2 gap-4 md:m-20 relative"}>
+    <Container as="main" size='large' className={"grid grid-cols-1 md:grid-cols-2 gap-4 md:m-20"}>
       {features.map((feature: FeatureType) =>
         <Link href={!feature.comingSoon ? feature.href : "/learn"} key={feature.name} className={
           cx(
-            "bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 min-h-[400px",
-            // how to disable click event
-            feature.comingSoon && " blur-sm cursor-not-allowed hover:cursor-not-allowed hover:blur-none"
+            "bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 min-h-[300px] relative",
+            feature.comingSoon && "blur-sm cursor-not-allowed hover:cursor-not-allowed hover:blur-none"
           )
         }>
           {feature.image &&
@@ -93,7 +92,7 @@ export default function FeatureList() {
           </div>
           {
             feature.comingSoon &&
-            <div className="absolute top-0 right-0 bg-red-500 text-white rounded-full px-2 py-1 m-2">Coming Soon</div>
+            <div className="absolute top-2 right-2 bg-red-500 text-white rounded-full px-2 py-1">Coming Soon</div>
           }
         </Link>
       )}
@@ -101,6 +100,3 @@ export default function FeatureList() {
     </Container>
   )
 }
-
-
-{/*  */ }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import Container from "../ui/container";
 import { useWord } from "@/store/useWord";
@@ -20,7 +20,8 @@ import * as z from "zod"
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { randomAlphabet, randomNumberFromRange } from "@/lib/utils";
-
+import { ToastAction } from "@/components/ui/toast"
+import { useToast } from "@/components/ui/use-toast"
 
 const formSchema = z.object({
   wordCount: z.coerce.number().min(1).max(100),
@@ -29,6 +30,9 @@ const formSchema = z.object({
   alphabetize: z.boolean(),
 })
 
+const waitingTime: number = 500;
+let countNullWords = 0;
+
 
 export default function Words() {
   const { words, setRandomWords } = useWord();
@@ -36,21 +40,55 @@ export default function Words() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema as any),
     defaultValues: {
-      wordCount: randomNumberFromRange(5, 10),
-      wordLength: randomNumberFromRange(5, 10),
-      firstLetter: randomAlphabet(),
+      wordCount: 12,
+      wordLength: 6,
+      firstLetter: "s",
       alphabetize: true
     },
-  })
+  });
+  const [waiting, setWaiting] = useState(false);
+  const { toast } = useToast();
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    setRandomWords(values.wordCount, values.wordLength, values.firstLetter, values.alphabetize);
+    if (!words || words?.length === 0) {
+      toast({
+        title: "No words found",
+        description: "Please try again",
+        action: <ToastAction altText="Try again" onClick={form.handleSubmit(onSubmit)}>Try again</ToastAction>,
+      })
+
+      ++countNullWords;
+      if (countNullWords > 3) {
+        toast({
+          title: "Please change your search criteria",
+          description: "Please check your search criteria and try again",
+          action: <ToastAction altText="Try again" onClick={form.handleSubmit(onSubmit)}>Try again</ToastAction>,
+        })
+        countNullWords = 0;
+      }
+    }
+
+    setWaiting(true);
+    setRandomWords(values.wordCount, values.wordLength, values.firstLetter, values.alphabetize)
+    setTimeout(() => { setWaiting(false); }, waitingTime)
   }
 
+  useEffect(() => {
+    setRandomWords(12, 6, "m", true);
+  }, [])
 
   useEffect(() => {
-    setRandomWords(randomNumberFromRange(1, 20), randomNumberFromRange(2, 10), form.getValues('firstLetter'), true);
-  }, [])
+    if (!words || words.length === 0) {
+      setWaiting(false);
+      toast({
+        title: "No words found",
+        description: "Please try again",
+        action: <ToastAction altText="Try again" onClick={form.handleSubmit(onSubmit)}>Try again</ToastAction>,
+      })
+      countNullWords++;
+    }
+
+  }, [words])
 
   return (
     <Container as="main" size="full" className="flex sm:flex-row flex-col justify-between sm:justify-evenly h-[600px]">
@@ -123,18 +161,21 @@ export default function Words() {
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+            <Button type="submit" disabled={waiting} className="disabled:cursor-not-allowed">
+              Submit
+            </Button>
           </form>
         </Form>
         <br />
 
         <h1 className="font-bold text-lg mb-2">Words</h1>
-        <ul className="grid grid-cols-1 gap-2 lg:grid-cols-4 xl:grid-cols-8">
+        <ul className="grid grid-cols-1 gap-4 lg:grid-cols-4 xl:grid-cols-6">
           {words ? words?.map((word, index) => (
             <li key={index}>
               <Button onClick={() => setWord(word)}>{word}</Button>
             </li>
-          )) : null}
+          )) :
+            <span className="w-52">No words found</span>}
         </ul>
       </div>
 
