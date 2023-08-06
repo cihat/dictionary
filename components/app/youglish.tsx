@@ -4,7 +4,6 @@
 import cx from '@/lib/cx';
 import React, { useState, useEffect, useRef } from 'react';
 import Container from '../ui/container';
-import { randomAlphabet } from '@/lib/utils';
 
 type YouglishWidgetProps = {
   word: string;
@@ -15,7 +14,7 @@ type YouglishWidgetProps = {
 function YouglishWidget({ word, className, firstLetter }: YouglishWidgetProps) {
   const isDev = process.env.NODE_ENV === 'development';
 
-  if(isDev) return <div className={className}>Developing</div>;
+  // if(isDev) return <div className={className}>Developing</div>;
 
   const widgetRef = useRef(null);
   const [views, setViews] = useState(0);
@@ -25,8 +24,8 @@ function YouglishWidget({ word, className, firstLetter }: YouglishWidgetProps) {
 
   const onYouglishAPIReady = (inputWord: string) => {
     widget = new YG.Widget(widgetRef.current, {
-      width: 950,
-      height: 950,
+      width: 1200,
+      height: 1200,
       components: 9,
       autoplay: true,
       autoReplay: true,
@@ -81,7 +80,6 @@ function YouglishWidget({ word, className, firstLetter }: YouglishWidgetProps) {
     setTimeout(() => {
       onYouglishAPIReady(firstLetter);
     }, 500);
-
   }, []);
 
   useEffect(() => {
@@ -91,7 +89,9 @@ function YouglishWidget({ word, className, firstLetter }: YouglishWidgetProps) {
   }, [word]);
 
   return (
-    <div id="youglish-widget" ref={widgetRef}></div>
+    <div className={className}>
+      <div id="youglish-widget" ref={widgetRef}></div>
+    </div>
   );
 }
 

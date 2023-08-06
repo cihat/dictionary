@@ -91,15 +91,15 @@ export default function Words() {
   }, [words])
 
   return (
-    <Container as="main" size="full" className="flex sm:flex-row flex-col justify-between sm:justify-evenly h-[600px]">
-      <div className="flex flex-col max-w-[50%] mr-auto">
+    <Container as="main" size="full" className="flex sm:flex-row flex-col justify-between sm:justify-evenly min-h-[600px]">
+      <div className="flex flex-col sm:w-[50%] pr-0 sm:pr-4 3xl:pr-0 mb-6 sm:mb-0">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
             <FormField
               control={form.control}
               name="wordCount"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="space-y-0">
                   <FormLabel>Word Count</FormLabel>
                   <FormControl>
                     <Input placeholder="Word Count" {...field} />
@@ -115,7 +115,7 @@ export default function Words() {
               control={form.control}
               name="wordLength"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="space-y-0">
                   <FormLabel>Word Length</FormLabel>
                   <FormControl>
                     <Input placeholder="Word Length" {...field} />
@@ -132,7 +132,7 @@ export default function Words() {
               control={form.control}
               name="firstLetter"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="space-y-0">
                   <FormLabel>First Letter</FormLabel>
                   <FormControl>
                     <Input placeholder="First Letter" {...field} />
@@ -149,7 +149,7 @@ export default function Words() {
               control={form.control}
               name="alphabetize"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="space-y-0">
                   <FormLabel className="mr-2">Alphabetize</FormLabel>
                   <FormControl>
                     <Checkbox checked={true} />
@@ -169,7 +169,7 @@ export default function Words() {
         <br />
 
         <h1 className="font-bold text-lg mb-2">Words</h1>
-        <ul className="grid grid-cols-1 gap-4 lg:grid-cols-4 xl:grid-cols-6">
+        <ul className="grid grid-cols-2 gap-4 lg:grid-cols-4 xl:grid-cols-6">
           {words ? words?.map((word, index) => (
             <li key={index}>
               <Button onClick={() => setWord(word)}>{word}</Button>
@@ -179,7 +179,7 @@ export default function Words() {
         </ul>
       </div>
 
-      <YouglishWidget className="flex-grow mt-4 sm:mt-0 max-w-[50%] ml-auto" word={word} firstLetter={form.getValues('firstLetter')} />
+      <YouglishWidget className="flex-grow mt-4 sm:mt-0 sm:max-w-[50%] sm:ml-auto items-center" word={word} firstLetter={form.getValues('firstLetter')} />
     </Container>
   )
 }
