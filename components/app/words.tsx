@@ -30,7 +30,7 @@ const formSchema = z.object({
   alphabetize: z.boolean(),
 })
 
-const waitingTime: number = 500;
+const waitingTime: number = 3000;
 let countNullWords = 0;
 
 
