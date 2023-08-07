@@ -42,7 +42,7 @@ export default function Words() {
     defaultValues: {
       wordCount: 12,
       wordLength: 6,
-      firstLetter: "s",
+      firstLetter: "m",
       alphabetize: true
     },
   });
