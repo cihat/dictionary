@@ -10,9 +10,6 @@ type BackButtonProps = {
 export default function BackButton({ href }: BackButtonProps = {}) {
   const router = useRouter()
 
-
-  console.log('href', href)
-
   return (
     <button
       className="my-8 block mb-4"

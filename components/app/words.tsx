@@ -21,6 +21,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ToastAction } from "@/components/ui/toast"
 import { useToast } from "@/components/ui/use-toast"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Info } from "lucide-react";
 
 const formSchema = z.object({
   wordCount: z.coerce.number().min(1).max(20),
@@ -168,6 +170,14 @@ export default function Words() {
         <br />
 
         <h1 className="font-bold text-lg mb-2">Words</h1>
+        {words &&
+          <Alert className="my-2">
+            <Info className="h-4 w-4" />
+            <AlertTitle>Click on a word!</AlertTitle>
+            <AlertDescription>
+              Click on a word to see it in youtube video via Youglish widget.
+            </AlertDescription>
+          </Alert>}
         <ul className="grid grid-cols-2 gap-4 lg:grid-cols-4 xl:grid-cols-6">
           {words ? words?.map((word, index) => (
             <li key={index}>

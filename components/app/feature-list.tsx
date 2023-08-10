@@ -84,7 +84,7 @@ export default function FeatureList() {
           }>
             {feature.image &&
               feature.image.length > 0 &&
-              <Image width={1000} height={1000} className="rounded-t-lg" src={feature.image} alt={feature.name} />
+              <Image width={500} height={500} className="rounded-t-lg" src={feature.image} alt={feature.name} />
             }
             <div className="p-5">
               <div >
