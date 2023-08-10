@@ -1,9 +1,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import cx from '@/lib/cx';
 import React, { useState, useEffect, useRef } from 'react';
-import Container from '../ui/container';
 
 type YouglishWidgetProps = {
   word: string;
@@ -14,7 +12,7 @@ type YouglishWidgetProps = {
 function YouglishWidget({ word, className, firstLetter }: YouglishWidgetProps) {
   const isDev = process.env.NODE_ENV === 'development';
 
-  // if(isDev) return <div className={className}>Developing</div>;
+  if(isDev) return <div className={className}>Developing</div>;
 
   const widgetRef = useRef(null);
   const [views, setViews] = useState(0);

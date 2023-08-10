@@ -3,11 +3,21 @@
 import { ChevronLeft } from "lucide-react";
 import { useRouter } from 'next/navigation';
 
-export default function BackButton() {
+type BackButtonProps = {
+  href?: string
+}
+
+export default function BackButton({ href }: BackButtonProps = {}) {
   const router = useRouter()
 
+
+  console.log('href', href)
+
   return (
-    <button onClick={() => router.back()} className="my-8 block mb-4">
+    <button
+      className="my-8 block mb-4"
+      onClick={() => href ? router.push(href) : router.back()}
+    >
       <ChevronLeft width={26} height={26} />
     </button>
   )

@@ -7,7 +7,7 @@ export default function Learn() {
 
   return (
     <Container as="main" size="full">
-      <BackButton />
+      <BackButton href="/learn"/>
       <Words />
     </Container>
   )

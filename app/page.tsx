@@ -14,9 +14,9 @@ export default function Home() {
       {/* <Header /> */}
       <HeroSection />
       <FreeSection />
-      <FeatureSection />
-      <TeamSection />
-      {/* <StatsSection /> */}
+      {/* <FeatureSection />
+      <TeamSection /> 
+       <StatsSection /> */}
       <CardAccordion />
       <Footer />
     </Container>

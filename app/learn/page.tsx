@@ -7,7 +7,7 @@ export default function LearnWithVideos() {
 
   return (
     <Container as="main" size="full" className="m-auto min-w-[100vw] min-h-[calc(100vh - 32px)]">
-      <BackButton />
+      <BackButton href="/"/>
       <FeatureList />
     </Container>
   )

@@ -17,15 +17,14 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import * as z from "zod"
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { randomAlphabet, randomNumberFromRange } from "@/lib/utils";
 import { ToastAction } from "@/components/ui/toast"
 import { useToast } from "@/components/ui/use-toast"
 
 const formSchema = z.object({
-  wordCount: z.coerce.number().min(1).max(100),
-  wordLength: z.coerce.number().min(1).max(100),
+  wordCount: z.coerce.number().min(1).max(20),
+  wordLength: z.coerce.number().min(1).max(30),
   firstLetter: z.string().length(1),
   alphabetize: z.boolean(),
 })
@@ -73,9 +72,9 @@ export default function Words() {
     setTimeout(() => { setWaiting(false); }, waitingTime)
   }
 
-  useEffect(() => {
-    setRandomWords(12, 6, "m", true);
-  }, [])
+  // useEffect(() => {
+  //   setRandomWords(12, 6, "m", true);
+  // }, [])
 
   useEffect(() => {
     if (!words || words.length === 0) {
